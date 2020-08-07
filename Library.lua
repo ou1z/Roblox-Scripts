@@ -164,7 +164,7 @@ function library:Init(parent)
 	local tabcount = 0
 	
 	local newgui = Gui(false)
-	newgui.Name = GetUUID()
+	newgui.Name = "SkYBLOCK"
 	newgui.Parent = parent
 	
 	local optionLibrary = {}
