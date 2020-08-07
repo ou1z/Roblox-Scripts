@@ -308,11 +308,7 @@ while true do
             end
    
             if isNotBlock then
-               local pos = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
-               game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = threeStudsAbove
                placeCrop('wheat', threeStudsAbove)
-               placeCrop('wheat', threeStudsAbove)
-               game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = pos
             end
             wait(.1)
          end
