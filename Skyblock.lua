@@ -1,3 +1,11 @@
+for i,v in pairs(game.CoreGui:GetChildren()) do
+   if v.Name:find("-") then
+      v:Destroy()
+   end
+end
+
+
+
 local library = loadstring(game:HttpGet("https://raw.githubusercontent.com/ou1z/Roblox-Scripts/master/Library.lua"))()
 local LP = game.Players.LocalPlayer
 
@@ -256,7 +264,7 @@ Placeholder:Destroy()
 -- Command / ScreenGui
 -- CommandBar / TextBox
 
-UIS.InputBegan:Connect(function(key, gpe)
+_G.inputbegan = function(key, gpe)
    if key.KeyCode == Enum.KeyCode.Quote and not gpe then
       print("Open")
       CommandBar:TweenPosition(UDim2.new(0.5, 0, 0.00999999978, 0), 'In', 'Quad', 0.1, true)
@@ -285,11 +293,13 @@ UIS.InputBegan:Connect(function(key, gpe)
          end
       end
    end
-end)
+end
 
 
-while true do
-   
+UIS.InputBegan:Connect(_G.inputbegan)
+
+
+_G.mainLoop = function()
    if AutoPlantToggles.Wheat and LP.Backpack:FindFirstChild("wheatSeeds") then
    
    
@@ -349,6 +359,11 @@ while true do
          end
       end
    end
+end
+
+while true do
+   
+   _G.mainLoop()
 
    wait()
 end
