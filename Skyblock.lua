@@ -18,6 +18,7 @@ function placeCrop(crop, cframe)
 end
 
 function harvestCrop(crop)
+   local pos = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = crop.CFrame
    local cf = crop.CFrame
    CropEvent:InvokeServer({
@@ -27,6 +28,7 @@ function harvestCrop(crop)
    delay(1, function()
       placeCrop(crop.Name)
    end)
+   game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = pos
 end
 
 
@@ -288,7 +290,7 @@ end)
 
 while true do
    
-   if AutoPlantToggles.Wheat then
+   if AutoPlantToggles.Wheat and LP.Backpack:FindFirstChild("wheatSeeds") then
    
    
       for i,v in pairs(myIsland.Blocks:GetChildren()) do
@@ -306,8 +308,6 @@ while true do
             end
    
             if isNotBlock then
-               game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = threeStudsAbove
-               placeCrop('wheat', threeStudsAbove)
                placeCrop('wheat', threeStudsAbove)
             end
             wait(.1)
