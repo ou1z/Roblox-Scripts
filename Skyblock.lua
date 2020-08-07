@@ -361,6 +361,7 @@ _G.mainLoop = function()
 end
 
 if not _G.executed then
+   _G.executed = true
    while true do
 
       _G.mainLoop()
