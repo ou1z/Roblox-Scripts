@@ -361,9 +361,11 @@ _G.mainLoop = function()
    end
 end
 
-while true do
-   
-   _G.mainLoop()
+if not _G.executed then
+   while true do
+      
+      _G.mainLoop()
 
-   wait()
+      wait()
+   end
 end
