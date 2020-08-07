@@ -5,7 +5,7 @@ end
 
 
 
-local library = loadstring(game:HttpGet("https://raw.githubusercontent.com/ou1z/Roblox-Scripts/master/Library.lua"))()
+local library = loadstring(game:HttpGet("https://pastebin.com/raw/pRA91U3e"))()
 local LP = game.Players.LocalPlayer
 
 local REP = game:GetService("ReplicatedStorage");
