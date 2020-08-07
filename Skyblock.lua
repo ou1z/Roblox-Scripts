@@ -27,8 +27,8 @@ function harvestCrop(crop)
    })
    delay(1, function()
       placeCrop(crop.Name)
+      game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = pos
    end)
-   game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = pos
 end
 
 
