@@ -1,7 +1,6 @@
-for i,v in pairs(game.CoreGui:GetChildren()) do
-   if v.Name:find("-") then
-      v:Destroy()
-   end
+if game.CoreGui:FindFirstChild("SKYBLOCK") then
+   game.CoreGui.SKYBLOCK:Destroy()
+   game.CoreGui.Commands:Destroy()
 end
 
 
@@ -301,32 +300,32 @@ UIS.InputBegan:Connect(_G.inputbegan)
 
 _G.mainLoop = function()
    if AutoPlantToggles.Wheat and LP.Backpack:FindFirstChild("wheatSeeds") then
-   
-   
+
+
       for i,v in pairs(myIsland.Blocks:GetChildren()) do
-   
+
          if v.Name == 'soil' then
             print('check')
             local threeStudsAbove = v.CFrame * CFrame.new(0,3,0)
             local isNotBlock = true
-   
+
             for a,b in pairs(myIsland.Blocks:GetChildren()) do
                if b.CFrame == threeStudsAbove then
                   isNotBlock = false
                   continue
                end
             end
-   
+
             if isNotBlock then
                placeCrop('wheat', threeStudsAbove)
             end
             wait(.1)
          end
-   
+
       end
-   
+
    end
-   
+
    if AutoHarvestBools.Berries then
       for i,v in pairs(myIsland.Blocks:GetChildren()) do
          if v.Name == 'berryBush' and v['stage'].value == 2 then
@@ -363,7 +362,7 @@ end
 
 if not _G.executed then
    while true do
-      
+
       _G.mainLoop()
 
       wait()
