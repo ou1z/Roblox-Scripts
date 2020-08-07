@@ -290,7 +290,7 @@ end)
 
 while true do
    
-   if AutoPlantToggles.Wheat and LP.Backpack:FindFirstChild("wheatSeeds") then
+   if AutoPlantToggles.Wheat  then
    
    
       for i,v in pairs(myIsland.Blocks:GetChildren()) do
