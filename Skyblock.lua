@@ -5,7 +5,7 @@ end
 
 
 
-local library = loadstring(game:HttpGet("https://pastebin.com/raw/pRA91U3e"))()
+local library = loadstring(game:HttpGet("https://raw.githubusercontent.com/ou1z/Roblox-Scripts/master/Library.lua"))()
 local LP = game.Players.LocalPlayer
 
 local REP = game:GetService("ReplicatedStorage");
@@ -187,10 +187,10 @@ getgenv().ItemNames = {
    ['Onions'] = 'onionHarvested',
    ['Grapes'] = 'grapeHarvested',
    ['Starfruit'] = 'starfruitHarvested',
-   ['Apple'] = 'appleHarvested',
-   ['Orange'] = 'orangeHarvested',
-   ['Lemon'] = 'lemonHarvested',
-   ['Avocado'] = 'avocadoHarvested'
+   ['Apple'] = 'apple',
+   ['Orange'] = 'orange',
+   ['Lemon'] = 'lemon',
+   ['Avocado'] = 'avocado'
 }
  --// UI SHIT \\--
 local main = library:Init(game.CoreGui);
