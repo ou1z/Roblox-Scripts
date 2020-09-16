@@ -1,4 +1,3 @@
-
 local Chat = Instance.new("ScreenGui")
 local ChatWindow = Instance.new("Frame")
 local Main = Instance.new("Frame")
@@ -14,11 +13,10 @@ local Send = Instance.new("TextButton")
 local Send_Roundify_2px = Instance.new("ImageLabel")
 local ClearMessages = Instance.new("TextButton")
 local Minimize = Instance.new("TextButton")
-local Send_Roundify_2px_2 = Instance.new("ImageLabel")
+local image_2 = Instance.new("ImageLabel")
 local TextLabel = Instance.new("TextLabel")
 local Open = Instance.new("TextButton")
-local image_2 = Instance.new("ImageLabel")
-
+local image_3 = Instance.new("ImageLabel")
 
 Chat.Name = "Chat"
 Chat.Parent = game.CoreGui
@@ -93,7 +91,7 @@ Message_2.Position = UDim2.new(0.0410557315, 0, 0.818593025, 0)
 Message_2.Size = UDim2.new(0, 525, 0, 62)
 Message_2.ZIndex = 5
 Message_2.Font = Enum.Font.Cartoon
-Message_2.PlaceholderText = "Enter a message."
+Message_2.PlaceholderText = "Press \\ to focus, or click here to focus."
 Message_2.Text = ""
 Message_2.TextColor3 = Color3.fromRGB(255, 255, 255)
 Message_2.TextSize = 20.000
@@ -187,21 +185,21 @@ Minimize.TextScaled = true
 Minimize.TextSize = 14.000
 Minimize.TextWrapped = true
 
-Send_Roundify_2px_2.Name = "Send_Roundify_2px"
-Send_Roundify_2px_2.Parent = Minimize
-Send_Roundify_2px_2.Active = true
-Send_Roundify_2px_2.AnchorPoint = Vector2.new(0.5, 0.5)
-Send_Roundify_2px_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-Send_Roundify_2px_2.BackgroundTransparency = 1.000
-Send_Roundify_2px_2.Position = UDim2.new(0.5, 0, 0.5, 0)
-Send_Roundify_2px_2.Selectable = true
-Send_Roundify_2px_2.Size = UDim2.new(1, 0, 1, 0)
-Send_Roundify_2px_2.ZIndex = 3
-Send_Roundify_2px_2.Image = "rbxassetid://3570695787"
-Send_Roundify_2px_2.ImageColor3 = Color3.fromRGB(40, 40, 40)
-Send_Roundify_2px_2.ScaleType = Enum.ScaleType.Slice
-Send_Roundify_2px_2.SliceCenter = Rect.new(100, 100, 100, 100)
-Send_Roundify_2px_2.SliceScale = 0.090
+image_2.Name = "image"
+image_2.Parent = Minimize
+image_2.Active = true
+image_2.AnchorPoint = Vector2.new(0.5, 0.5)
+image_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+image_2.BackgroundTransparency = 1.000
+image_2.Position = UDim2.new(0.5, 0, 0.5, 0)
+image_2.Selectable = true
+image_2.Size = UDim2.new(1, 0, 1, 0)
+image_2.ZIndex = 3
+image_2.Image = "rbxassetid://3570695787"
+image_2.ImageColor3 = Color3.fromRGB(40, 40, 40)
+image_2.ScaleType = Enum.ScaleType.Slice
+image_2.SliceCenter = Rect.new(100, 100, 100, 100)
+image_2.SliceScale = 0.090
 
 TextLabel.Parent = ChatWindow
 TextLabel.BackgroundColor3 = Color3.fromRGB(42, 42, 42)
@@ -231,24 +229,22 @@ Open.TextScaled = true
 Open.TextSize = 14.000
 Open.TextWrapped = true
 
-image_2.Name = "image"
-image_2.Parent = Open
-image_2.Active = true
-image_2.AnchorPoint = Vector2.new(0.5, 0.5)
-image_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-image_2.BackgroundTransparency = 1.000
-image_2.Position = UDim2.new(0.5, 0, 0.5, 0)
-image_2.Selectable = true
-image_2.Size = UDim2.new(1, 0, 1, 0)
-image_2.Image = "rbxassetid://3570695787"
-image_2.ImageColor3 = Color3.fromRGB(42, 42, 42)
-image_2.ScaleType = Enum.ScaleType.Slice
-image_2.SliceCenter = Rect.new(100, 100, 100, 100)
-image_2.SliceScale = 0.090
+image_3.Name = "image"
+image_3.Parent = Open
+image_3.Active = true
+image_3.AnchorPoint = Vector2.new(0.5, 0.5)
+image_3.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+image_3.BackgroundTransparency = 1.000
+image_3.Position = UDim2.new(0.5, 0, 0.5, 0)
+image_3.Selectable = true
+image_3.Size = UDim2.new(1, 0, 1, 0)
+image_3.Image = "rbxassetid://3570695787"
+image_3.ImageColor3 = Color3.fromRGB(42, 42, 42)
+image_3.ScaleType = Enum.ScaleType.Slice
+image_3.SliceCenter = Rect.new(100, 100, 100, 100)
+image_3.SliceScale = 0.090
 
--- Scripts:
-
-local function ZDLI_fake_script() -- Main.LocalScript 
+local function TPKVHD_fake_script() -- Main.LocalScript 
 	local script = Instance.new('LocalScript', Main)
 
 	
@@ -321,6 +317,112 @@ local function ZDLI_fake_script() -- Main.LocalScript
 	
 	local debounce = false;
 	
+	
+	local Commands = {
+		['.dex'] = function()
+			if game:GetService'CoreGui':FindFirstChild'Dex' then
+				game:GetService'CoreGui'.Dex:Destroy();
+			end
+			
+			math.randomseed(tick())
+			
+			local charset = {}
+			for i = 48,  57 do table.insert(charset, string.char(i)) end
+			for i = 65,  90 do table.insert(charset, string.char(i)) end
+			for i = 97, 122 do table.insert(charset, string.char(i)) end
+			function RandomCharacters(length)
+				if length > 0 then
+					return RandomCharacters(length - 1) .. charset[math.random(1, #charset)]
+				else
+					return ""
+				end
+			end
+			
+			local Dex = game:GetObjects("rbxassetid://3567096419")[1]
+			syn.protect_gui(Dex)
+			Dex.Name = RandomCharacters(math.random(5, 20))
+			Dex.Parent = game:GetService("CoreGui")
+			
+			local function Load(Obj, Url)
+				local function GiveOwnGlobals(Func, Script)
+					local Fenv = {}
+					local RealFenv = {script = Script}
+					local FenvMt = {}
+					FenvMt.__index = function(a,b)
+						if RealFenv[b] == nil then
+							return getfenv()[b]
+						else
+							return RealFenv[b]
+						end
+					end
+					FenvMt.__newindex = function(a, b, c)
+						if RealFenv[b] == nil then
+							getfenv()[b] = c
+						else
+							RealFenv[b] = c
+						end
+					end
+					setmetatable(Fenv, FenvMt)
+					setfenv(Func, Fenv)
+					return Func
+				end
+				
+				local function LoadScripts(Script)
+					if Script.ClassName == "Script" or Script.ClassName == "LocalScript" then
+						spawn(function()
+							GiveOwnGlobals(loadstring(Script.Source, "=" .. Script:GetFullName()), Script)()
+						end)
+					end
+					for i,v in pairs(Script:GetChildren()) do
+						LoadScripts(v)
+					end
+				end
+				
+				LoadScripts(Obj)
+			end
+			
+			Load(Dex)
+		end,
+		['.remotespy'] = function()
+			loadstring(game:HttpGet("https://raw.githubusercontent.com/ou1z/Roblox-Scripts/master/RemoteSpy.lua"))()
+		end,
+		['.quit'] = function()
+			script.Parent.Parent.Parent:Destroy()
+		end
+	}
+	
+	function send()
+		if debounce then return end;
+		if #Message.Text < 1 then 
+			return 
+		elseif #Message.Text > 150 then
+			Message.Text = 'Message is too long.'
+			debounce = true;
+			delay(1.5, function()
+				Message.Text = ''
+				debounce = false;
+			end)
+			return 
+		end;
+		sendMessage()
+		
+		if Commands[Message.Text] then
+			Commands[Message.Text]()
+		end
+		
+		Message.Text = ''
+		
+		debounce = true;
+		delay(1.5, function()
+			debounce = false;
+		end)
+	end
+	
+	Message.FocusLost:Connect(function(enter)
+		if not enter then return end;
+		send()
+	end)
+	
 	Message.Changed:Connect(function()
 		if #Message.Text > 150 then
 			Message.Text = Message.Text:sub(1,150)
@@ -344,31 +446,17 @@ local function ZDLI_fake_script() -- Main.LocalScript
 	end)
 	
 	script.Parent.Send.MouseButton1Click:Connect(function()
-		if debounce then return end;
-		if #Message.Text < 1 then 
-			Message.Text = 'Message cannot be empty.'
-			debounce = true;
-			delay(1.5, function()
-				Message.Text = ''
-				debounce = false;
-			end)
-			return 
-		elseif #Message.Text > 150 then
-			Message.Text = 'Message is too long.'
-			debounce = true;
-			delay(1.5, function()
-				Message.Text = ''
-				debounce = false;
-			end)
-			return 
-		end;
-		sendMessage()
-		Message.Text = 'Sent!'
-		debounce = true;
-		delay(1.5, function()
+		send()
+	end)
+	
+	game:GetService('UserInputService').InputBegan:Connect(function(key, gpe)
+		if gpe then return end
+		
+		if key.KeyCode == Enum.KeyCode.BackSlash then
+			Message:CaptureFocus()
+			wait()
 			Message.Text = ''
-			debounce = false;
-		end)
+		end
 	end)
 	
 	script.Parent.ClearMessages.MouseButton1Click:Connect(function()
@@ -379,15 +467,37 @@ local function ZDLI_fake_script() -- Main.LocalScript
 		end
 	end)
 	
+	--//Minimize Color
+	script.Parent.Minimize.MouseEnter:Connect(function()
+		game:GetService('TweenService'):Create(script.Parent.Minimize.image, TweenInfo.new(0.5), {ImageColor3 = Color3.fromRGB(35,35,35)}):Play()
+	end)
+	script.Parent.Minimize.MouseLeave:Connect(function()
+		game:GetService('TweenService'):Create(script.Parent.Minimize.image, TweenInfo.new(0.5), {ImageColor3 = Color3.fromRGB(40,40,40)}):Play()
+	end)
+	
+	
+	--//Message Box Color
+	script.Parent.Message.MouseEnter:Connect(function()
+		game:GetService('TweenService'):Create(script.Parent.Message.image, TweenInfo.new(0.5), {ImageColor3 = Color3.fromRGB(34,34,34)}):Play()
+	end)
+	script.Parent.Message.Focused:Connect(function()
+		game:GetService('TweenService'):Create(script.Parent.Message.image, TweenInfo.new(0.5), {ImageColor3 = Color3.fromRGB(31,31,31)}):Play()
+	end)
+	script.Parent.Message.FocusLost:Connect(function()
+		game:GetService('TweenService'):Create(script.Parent.Message.image, TweenInfo.new(0.5), {ImageColor3 = Color3.fromRGB(39, 39, 39)}):Play()
+	end)
+	
+	
+	
 	while wait(1) do
 		web:Send("Keep Alive!")
 	end
 end
-coroutine.wrap(ZDLI_fake_script)()
-local function JTOUGR_fake_script() -- ChatWindow.LocalScript 
+coroutine.wrap(TPKVHD_fake_script)()
+local function QBYE_fake_script() -- ChatWindow.LocalScript 
 	local script = Instance.new('LocalScript', ChatWindow)
 
 	script.Parent.Active = true;
 	script.Parent.Draggable = true;
 end
-coroutine.wrap(JTOUGR_fake_script)()
+coroutine.wrap(QBYE_fake_script)()
