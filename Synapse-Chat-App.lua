@@ -1,3 +1,8 @@
+-- Gui to Lua
+-- Version: 3.2
+
+-- Instances:
+
 local Chat = Instance.new("ScreenGui")
 local ChatWindow = Instance.new("Frame")
 local Main = Instance.new("Frame")
@@ -249,7 +254,7 @@ image_2.SliceScale = 0.090
 
 -- Scripts:
 
-local function KZFFAWS_fake_script() -- Main.LocalScript 
+local function YTNWF_fake_script() -- Main.LocalScript 
 	local script = Instance.new('LocalScript', Main)
 
 	
@@ -281,6 +286,7 @@ local function KZFFAWS_fake_script() -- Main.LocalScript
 	if not _G.client then
 		_G.client = syn.websocket.connect('ws://synapse-chat-app.herokuapp.com/')
 		_G.client.OnMessage:Connect(function(msg)
+			if msg == 'Keep Alive!' then return end;
 			local data = json_decode(msg)
 			newMessage(data);
 		end)
@@ -366,12 +372,16 @@ local function KZFFAWS_fake_script() -- Main.LocalScript
 			end
 		end
 	end)
+	
+	while wait(1) do
+		web:Send("Keep Alive!")
+	end
 end
-coroutine.wrap(KZFFAWS_fake_script)()
-local function YLTQJVW_fake_script()
+coroutine.wrap(YTNWF_fake_script)()
+local function BSEI_fake_script() -- ChatWindow.LocalScript 
 	local script = Instance.new('LocalScript', ChatWindow)
 
 	script.Parent.Active = true;
 	script.Parent.Draggable = true;
 end
-coroutine.wrap(YLTQJVW_fake_script)()
+coroutine.wrap(BSEI_fake_script)()
