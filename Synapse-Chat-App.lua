@@ -244,7 +244,7 @@ image_3.ScaleType = Enum.ScaleType.Slice
 image_3.SliceCenter = Rect.new(100, 100, 100, 100)
 image_3.SliceScale = 0.090
 
-local function TPKVHD_fake_script() -- Main.LocalScript 
+local function MICOMH_fake_script() -- Main.LocalScript 
 	local script = Instance.new('LocalScript', Main)
 
 	
@@ -314,6 +314,31 @@ local function TPKVHD_fake_script() -- Main.LocalScript
 		script.Parent.Parent:TweenPosition(UDim2.new(0.5,0,0.5,0), 'Out', 'Linear', 0.5, true)
 		script.Parent.Parent.Parent.Open:TweenPosition(UDim2.new(-1.5,0,1.5,0), 'Out', 'Linear', 0.5, true)
 	end)
+	
+	
+	local opened = true;
+	
+	
+	game:GetService('UserInputService').InputBegan:Connect(function(key, gpe)
+		if gpe then return end
+		
+		if key.KeyCode == Enum.KeyCode.BackSlash then
+			Message:CaptureFocus()
+			wait()
+			Message.Text = ''
+		elseif key.KeyCode == Enum.KeyCode.Insert then
+			opened = not opened
+			
+			if opened then
+				script.Parent.Parent:TweenPosition(UDim2.new(0.5,0,0.5,0), 'Out', 'Linear', 0.5, true)
+				script.Parent.Parent.Parent.Open:TweenPosition(UDim2.new(-1.5,0,1.5,0), 'Out', 'Linear', 0.5, true)
+			else
+				script.Parent.Parent:TweenPosition(UDim2.new(-1.5,0,1.5,0), 'In', 'Linear', 0.5, true)
+				script.Parent.Parent.Parent.Open:TweenPosition(UDim2.new(-0.006, 0,0.947, 0), 'In', 'Linear', 0.5, true)
+			end
+		end
+	end)
+	
 	
 	local debounce = false;
 	
@@ -449,15 +474,7 @@ local function TPKVHD_fake_script() -- Main.LocalScript
 		send()
 	end)
 	
-	game:GetService('UserInputService').InputBegan:Connect(function(key, gpe)
-		if gpe then return end
-		
-		if key.KeyCode == Enum.KeyCode.BackSlash then
-			Message:CaptureFocus()
-			wait()
-			Message.Text = ''
-		end
-	end)
+	
 	
 	script.Parent.ClearMessages.MouseButton1Click:Connect(function()
 		for i,v in pairs(script.Parent.MessageHolder:GetChildren()) do
@@ -493,11 +510,11 @@ local function TPKVHD_fake_script() -- Main.LocalScript
 		web:Send("Keep Alive!")
 	end
 end
-coroutine.wrap(TPKVHD_fake_script)()
-local function QBYE_fake_script() -- ChatWindow.LocalScript 
+coroutine.wrap(MICOMH_fake_script)()
+local function PGNPTO_fake_script() -- ChatWindow.LocalScript 
 	local script = Instance.new('LocalScript', ChatWindow)
 
 	script.Parent.Active = true;
 	script.Parent.Draggable = true;
 end
-coroutine.wrap(QBYE_fake_script)()
+coroutine.wrap(PGNPTO_fake_script)()
