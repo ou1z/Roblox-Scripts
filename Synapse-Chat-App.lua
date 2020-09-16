@@ -1,7 +1,3 @@
--- Gui to Lua
--- Version: 3.2
-
--- Instances:
 
 local Chat = Instance.new("ScreenGui")
 local ChatWindow = Instance.new("Frame")
@@ -23,7 +19,6 @@ local TextLabel = Instance.new("TextLabel")
 local Open = Instance.new("TextButton")
 local image_2 = Instance.new("ImageLabel")
 
---Properties:
 
 Chat.Name = "Chat"
 Chat.Parent = game.CoreGui
@@ -52,7 +47,6 @@ MessageHolder.BorderColor3 = Color3.fromRGB(43, 43, 43)
 MessageHolder.BorderSizePixel = 0
 MessageHolder.Position = UDim2.new(0.0211480372, 0, 0.138539046, 0)
 MessageHolder.Size = UDim2.new(0, 639, 0, 267)
-MessageHolder.CanvasPosition = Vector2.new(0, 527)
 MessageHolder.ScrollBarThickness = 1
 
 Placeholder.Name = "Placeholder"
@@ -254,7 +248,7 @@ image_2.SliceScale = 0.090
 
 -- Scripts:
 
-local function YTNWF_fake_script() -- Main.LocalScript 
+local function ZDLI_fake_script() -- Main.LocalScript 
 	local script = Instance.new('LocalScript', Main)
 
 	
@@ -285,9 +279,21 @@ local function YTNWF_fake_script() -- Main.LocalScript
 	
 	if not _G.client then
 		_G.client = syn.websocket.connect('ws://synapse-chat-app.herokuapp.com/')
+		_G.client:Send(json_encode({
+			['Action'] = 'Connected',
+			['Username'] = username,
+		}))
 		_G.client.OnMessage:Connect(function(msg)
 			if msg == 'Keep Alive!' then return end;
 			local data = json_decode(msg)
+			
+			if data['Action'] == 'New User' then
+				newMessage({
+					['Username'] = data['Username'],
+					['Message'] = 'has joined the chat!';
+				});
+				return;
+			end
 			newMessage(data);
 		end)
 	end
@@ -377,11 +383,11 @@ local function YTNWF_fake_script() -- Main.LocalScript
 		web:Send("Keep Alive!")
 	end
 end
-coroutine.wrap(YTNWF_fake_script)()
-local function BSEI_fake_script() -- ChatWindow.LocalScript 
+coroutine.wrap(ZDLI_fake_script)()
+local function JTOUGR_fake_script() -- ChatWindow.LocalScript 
 	local script = Instance.new('LocalScript', ChatWindow)
 
 	script.Parent.Active = true;
 	script.Parent.Draggable = true;
 end
-coroutine.wrap(BSEI_fake_script)()
+coroutine.wrap(JTOUGR_fake_script)()
