@@ -64,6 +64,7 @@ Username.Font = Enum.Font.Cartoon
 Username.Text = "[username]:"
 Username.TextColor3 = Color3.fromRGB(255, 255, 255)
 Username.TextSize = 20.000
+Username.TextScaled = true;
 
 Message.Name = "Message"
 Message.Parent = Placeholder
