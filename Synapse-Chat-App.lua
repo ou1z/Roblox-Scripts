@@ -275,7 +275,7 @@ local function MICOMH_fake_script() -- Main.LocalScript
 	end
 	
 	if not _G.client then
-		_G.client = syn.websocket.connect('wssynapse-chat-app.herokuapp.com')
+		_G.client = syn.websocket.connect('ws://synapse-chat-app.herokuapp.com')
 		_G.clientSend(json_encode({
 			['Action'] = 'Connected',
 			['Username'] = username,
