@@ -275,7 +275,7 @@ local function XFMVPQ_fake_script() -- Main.LocalScript
 	end
 	
 	if not _G.client then
-		_G.client = syn.websocket.connect('ws://localhost:2781')
+		_G.client = syn.websocket.connect('ws://synapse-chat-app.herokuapp.com')
 		_G.client:Send(json_encode({
 			['Action'] = 'Connected',
 			['Username'] = username,
