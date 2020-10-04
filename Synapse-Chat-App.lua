@@ -18,6 +18,7 @@ local TextLabel = Instance.new("TextLabel")
 local Open = Instance.new("TextButton")
 local image_3 = Instance.new("ImageLabel")
 
+
 Chat.Name = "Chat"
 Chat.Parent = game.CoreGui
 
@@ -64,7 +65,6 @@ Username.Font = Enum.Font.Cartoon
 Username.Text = "[username]:"
 Username.TextColor3 = Color3.fromRGB(255, 255, 255)
 Username.TextSize = 20.000
-Username.TextScaled = true;
 
 Message.Name = "Message"
 Message.Parent = Placeholder
@@ -245,10 +245,10 @@ image_3.ScaleType = Enum.ScaleType.Slice
 image_3.SliceCenter = Rect.new(100, 100, 100, 100)
 image_3.SliceScale = 0.090
 
-local function MICOMH_fake_script() -- Main.LocalScript 
-	local script = Instance.new('LocalScript', Main)
+-- Scripts:
 
-	
+local function XFMVPQ_fake_script() -- Main.LocalScript 
+	local script = Instance.new('LocalScript', Main)
 	
 	local username = game.Players.LocalPlayer.Name
 	local Message = script.Parent.Message
@@ -275,7 +275,7 @@ local function MICOMH_fake_script() -- Main.LocalScript
 	end
 	
 	if not _G.client then
-		_G.client = syn.websocket.connect('ws://synapse-chat-app.herokuapp.com/')
+		_G.client = syn.websocket.connect('ws://localhost:2781')
 		_G.client:Send(json_encode({
 			['Action'] = 'Connected',
 			['Username'] = username,
@@ -290,8 +290,18 @@ local function MICOMH_fake_script() -- Main.LocalScript
 					['Message'] = 'has joined the chat!';
 				});
 				return;
+			elseif data['Action'] == 'RequestedJobId' then
+				_G.client:Send(json_encode({
+					['Action'] = 'SendJobId',
+					['JobId'] = tostring(game.JobId),
+					['PlaceId'] = tostring(game.PlaceId),
+					['User'] = data['User']
+				}))
+				return
+			elseif data['Message'] then
+				newMessage(data);
+				return
 			end
-			newMessage(data);
 		end)
 	end
 	local web = _G.client
@@ -329,7 +339,7 @@ local function MICOMH_fake_script() -- Main.LocalScript
 			Message.Text = ''
 		elseif key.KeyCode == Enum.KeyCode.Insert then
 			opened = not opened
-			
+			warn(opened)
 			if opened then
 				script.Parent.Parent:TweenPosition(UDim2.new(0.5,0,0.5,0), 'Out', 'Linear', 0.5, true)
 				script.Parent.Parent.Parent.Open:TweenPosition(UDim2.new(-1.5,0,1.5,0), 'Out', 'Linear', 0.5, true)
@@ -340,6 +350,34 @@ local function MICOMH_fake_script() -- Main.LocalScript
 		end
 	end)
 	
+	
+	function invokeServer(arg, user)
+		if arg == 'JobId' then
+			
+			local jobid
+			
+			_G.client:Send(json_encode({
+				['Request'] = 'JobId',
+				['Username'] = user,
+				['MyUsername'] = game.Players.LocalPlayer.Name
+			}))
+			
+			local conn = _G.client.OnMessage:Connect(function(msg)
+				if msg == 'Keep Alive!' then return end
+				
+				local tbl = json_decode(msg)
+				
+				if tbl['Game'] then
+					jobid = tbl['Game']
+				end
+			end)
+			
+			repeat wait() until jobid;
+			conn:Disconnect()
+			warn('jobid:', jobid)
+			return jobid
+		end
+	end
 	
 	local debounce = false;
 	
@@ -414,6 +452,22 @@ local function MICOMH_fake_script() -- Main.LocalScript
 		end,
 		['.quit'] = function()
 			script.Parent.Parent.Parent:Destroy()
+		end,
+		['.join'] = function(msg)
+			local split = msg:split(' ');
+			local user = split[2]
+			
+			local theirGame = invokeServer('JobId', user)
+			if not theirGame then return end
+			
+			theirGame = json_decode(theirGame)
+			
+			local jobid = theirGame['JobId']
+			local placeid = theirGame['PlaceId']
+			
+			print('Teleporting to:', jobid, placeid)
+			game:GetService("TeleportService"):TeleportToPlaceInstance(placeid, placeid)
+			
 		end
 	}
 	
@@ -432,8 +486,8 @@ local function MICOMH_fake_script() -- Main.LocalScript
 		end;
 		sendMessage()
 		
-		if Commands[Message.Text] then
-			Commands[Message.Text]()
+		if Commands[Message.Text:split(' ')[1]] then
+			Commands[Message.Text:split(' ')[1]](Message.Text)
 		end
 		
 		Message.Text = ''
@@ -511,11 +565,11 @@ local function MICOMH_fake_script() -- Main.LocalScript
 		web:Send("Keep Alive!")
 	end
 end
-coroutine.wrap(MICOMH_fake_script)()
-local function PGNPTO_fake_script() -- ChatWindow.LocalScript 
+coroutine.wrap(XFMVPQ_fake_script)()
+local function CXCK_fake_script() -- ChatWindow.LocalScript 
 	local script = Instance.new('LocalScript', ChatWindow)
-
+	
 	script.Parent.Active = true;
 	script.Parent.Draggable = true;
 end
-coroutine.wrap(PGNPTO_fake_script)()
+coroutine.wrap(CXCK_fake_script)()
