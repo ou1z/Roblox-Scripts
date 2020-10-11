@@ -8,18 +8,21 @@ local UIGradient = Instance.new("UIGradient")
 local UIGradient_2 = Instance.new("UIGradient")
 local Holder = Instance.new("ScrollingFrame")
 local UIListLayout = Instance.new("UIListLayout")
-local Frame = Instance.new("ImageLabel")
+local AutoCounterFreeze = Instance.new("ImageLabel")
 local Text_2 = Instance.new("TextLabel")
 local Toggle = Instance.new("TextButton")
 local image = Instance.new("ImageLabel")
-local Frame_2 = Instance.new("ImageLabel")
+local WalkAnimation = Instance.new("ImageLabel")
 local Text_3 = Instance.new("TextLabel")
 local Toggle_2 = Instance.new("TextButton")
 local image_2 = Instance.new("ImageLabel")
-local Frame_3 = Instance.new("ImageLabel")
+local NoCooldown = Instance.new("ImageLabel")
 local Text_4 = Instance.new("TextLabel")
 local Toggle_3 = Instance.new("TextButton")
 local image_3 = Instance.new("ImageLabel")
+local NoCooldown_2 = Instance.new("ImageLabel")
+local Button = Instance.new("TextButton")
+local image_4 = Instance.new("ImageLabel")
 
 HoodFighting.Name = "HoodFighting"
 HoodFighting.Parent = game.CoreGui
@@ -95,20 +98,20 @@ UIListLayout.HorizontalAlignment = Enum.HorizontalAlignment.Center
 UIListLayout.SortOrder = Enum.SortOrder.LayoutOrder
 UIListLayout.Padding = UDim.new(0, 5)
 
-Frame.Name = "Frame"
-Frame.Parent = Holder
-Frame.BackgroundColor3 = Color3.fromRGB(22, 33, 62)
-Frame.BackgroundTransparency = 1.000
-Frame.Position = UDim2.new(0.0250000339, 0, 0, 0)
-Frame.Size = UDim2.new(0, 506, 0, 45)
-Frame.Image = "rbxassetid://3570695787"
-Frame.ImageColor3 = Color3.fromRGB(22, 33, 62)
-Frame.ScaleType = Enum.ScaleType.Slice
-Frame.SliceCenter = Rect.new(100, 100, 100, 100)
-Frame.SliceScale = 0.040
+AutoCounterFreeze.Name = "AutoCounterFreeze"
+AutoCounterFreeze.Parent = Holder
+AutoCounterFreeze.BackgroundColor3 = Color3.fromRGB(22, 33, 62)
+AutoCounterFreeze.BackgroundTransparency = 1.000
+AutoCounterFreeze.Position = UDim2.new(0.0250000339, 0, 0, 0)
+AutoCounterFreeze.Size = UDim2.new(0, 506, 0, 45)
+AutoCounterFreeze.Image = "rbxassetid://3570695787"
+AutoCounterFreeze.ImageColor3 = Color3.fromRGB(22, 33, 62)
+AutoCounterFreeze.ScaleType = Enum.ScaleType.Slice
+AutoCounterFreeze.SliceCenter = Rect.new(100, 100, 100, 100)
+AutoCounterFreeze.SliceScale = 0.040
 
 Text_2.Name = "Text"
-Text_2.Parent = Frame
+Text_2.Parent = AutoCounterFreeze
 Text_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 Text_2.BackgroundTransparency = 1.000
 Text_2.BorderColor3 = Color3.fromRGB(27, 42, 53)
@@ -121,7 +124,7 @@ Text_2.TextSize = 14.000
 Text_2.TextXAlignment = Enum.TextXAlignment.Left
 
 Toggle.Name = "Toggle"
-Toggle.Parent = Frame
+Toggle.Parent = AutoCounterFreeze
 Toggle.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 Toggle.BackgroundTransparency = 1.000
 Toggle.BorderSizePixel = 0
@@ -146,20 +149,20 @@ image.ScaleType = Enum.ScaleType.Slice
 image.SliceCenter = Rect.new(100, 100, 100, 100)
 image.SliceScale = 0.050
 
-Frame_2.Name = "Frame"
-Frame_2.Parent = Holder
-Frame_2.BackgroundColor3 = Color3.fromRGB(22, 33, 62)
-Frame_2.BackgroundTransparency = 1.000
-Frame_2.Position = UDim2.new(0.0250000339, 0, 0, 0)
-Frame_2.Size = UDim2.new(0, 506, 0, 45)
-Frame_2.Image = "rbxassetid://3570695787"
-Frame_2.ImageColor3 = Color3.fromRGB(22, 33, 62)
-Frame_2.ScaleType = Enum.ScaleType.Slice
-Frame_2.SliceCenter = Rect.new(100, 100, 100, 100)
-Frame_2.SliceScale = 0.040
+WalkAnimation.Name = "WalkAnimation"
+WalkAnimation.Parent = Holder
+WalkAnimation.BackgroundColor3 = Color3.fromRGB(22, 33, 62)
+WalkAnimation.BackgroundTransparency = 1.000
+WalkAnimation.Position = UDim2.new(0.0250000339, 0, 0, 0)
+WalkAnimation.Size = UDim2.new(0, 506, 0, 45)
+WalkAnimation.Image = "rbxassetid://3570695787"
+WalkAnimation.ImageColor3 = Color3.fromRGB(22, 33, 62)
+WalkAnimation.ScaleType = Enum.ScaleType.Slice
+WalkAnimation.SliceCenter = Rect.new(100, 100, 100, 100)
+WalkAnimation.SliceScale = 0.040
 
 Text_3.Name = "Text"
-Text_3.Parent = Frame_2
+Text_3.Parent = WalkAnimation
 Text_3.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 Text_3.BackgroundTransparency = 1.000
 Text_3.BorderColor3 = Color3.fromRGB(27, 42, 53)
@@ -172,7 +175,7 @@ Text_3.TextSize = 14.000
 Text_3.TextXAlignment = Enum.TextXAlignment.Left
 
 Toggle_2.Name = "Toggle"
-Toggle_2.Parent = Frame_2
+Toggle_2.Parent = WalkAnimation
 Toggle_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 Toggle_2.BackgroundTransparency = 1.000
 Toggle_2.BorderSizePixel = 0
@@ -197,20 +200,20 @@ image_2.ScaleType = Enum.ScaleType.Slice
 image_2.SliceCenter = Rect.new(100, 100, 100, 100)
 image_2.SliceScale = 0.050
 
-Frame_3.Name = "Frame"
-Frame_3.Parent = Holder
-Frame_3.BackgroundColor3 = Color3.fromRGB(22, 33, 62)
-Frame_3.BackgroundTransparency = 1.000
-Frame_3.Position = UDim2.new(0.0250000339, 0, 0, 0)
-Frame_3.Size = UDim2.new(0, 506, 0, 45)
-Frame_3.Image = "rbxassetid://3570695787"
-Frame_3.ImageColor3 = Color3.fromRGB(22, 33, 62)
-Frame_3.ScaleType = Enum.ScaleType.Slice
-Frame_3.SliceCenter = Rect.new(100, 100, 100, 100)
-Frame_3.SliceScale = 0.040
+NoCooldown.Name = "NoCooldown"
+NoCooldown.Parent = Holder
+NoCooldown.BackgroundColor3 = Color3.fromRGB(22, 33, 62)
+NoCooldown.BackgroundTransparency = 1.000
+NoCooldown.Position = UDim2.new(0.0250000339, 0, 0, 0)
+NoCooldown.Size = UDim2.new(0, 506, 0, 45)
+NoCooldown.Image = "rbxassetid://3570695787"
+NoCooldown.ImageColor3 = Color3.fromRGB(22, 33, 62)
+NoCooldown.ScaleType = Enum.ScaleType.Slice
+NoCooldown.SliceCenter = Rect.new(100, 100, 100, 100)
+NoCooldown.SliceScale = 0.040
 
 Text_4.Name = "Text"
-Text_4.Parent = Frame_3
+Text_4.Parent = NoCooldown
 Text_4.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 Text_4.BackgroundTransparency = 1.000
 Text_4.BorderColor3 = Color3.fromRGB(27, 42, 53)
@@ -223,7 +226,7 @@ Text_4.TextSize = 14.000
 Text_4.TextXAlignment = Enum.TextXAlignment.Left
 
 Toggle_3.Name = "Toggle"
-Toggle_3.Parent = Frame_3
+Toggle_3.Parent = NoCooldown
 Toggle_3.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 Toggle_3.BackgroundTransparency = 1.000
 Toggle_3.BorderSizePixel = 0
@@ -248,9 +251,49 @@ image_3.ScaleType = Enum.ScaleType.Slice
 image_3.SliceCenter = Rect.new(100, 100, 100, 100)
 image_3.SliceScale = 0.050
 
+NoCooldown_2.Name = "NoCooldown"
+NoCooldown_2.Parent = Holder
+NoCooldown_2.BackgroundColor3 = Color3.fromRGB(22, 33, 62)
+NoCooldown_2.BackgroundTransparency = 1.000
+NoCooldown_2.Position = UDim2.new(0.0250000339, 0, 0, 0)
+NoCooldown_2.Size = UDim2.new(0, 506, 0, 45)
+NoCooldown_2.Image = "rbxassetid://3570695787"
+NoCooldown_2.ImageColor3 = Color3.fromRGB(22, 33, 62)
+NoCooldown_2.ScaleType = Enum.ScaleType.Slice
+NoCooldown_2.SliceCenter = Rect.new(100, 100, 100, 100)
+NoCooldown_2.SliceScale = 0.040
+
+Button.Name = "Button"
+Button.Parent = NoCooldown_2
+Button.AnchorPoint = Vector2.new(0.5, 0.5)
+Button.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Button.BackgroundTransparency = 1.000
+Button.BorderSizePixel = 0
+Button.Position = UDim2.new(0.5, 0, 0.5, 0)
+Button.Size = UDim2.new(0.970000029, 0, 0.800000012, 0)
+Button.Font = Enum.Font.SourceSans
+Button.Text = "Reset"
+Button.TextColor3 = Color3.fromRGB(0, 0, 0)
+Button.TextSize = 14.000
+
+image_4.Name = "image"
+image_4.Parent = Button
+image_4.Active = true
+image_4.AnchorPoint = Vector2.new(0.5, 0.5)
+image_4.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+image_4.BackgroundTransparency = 1.000
+image_4.Position = UDim2.new(0.5, 0, 0.5, 0)
+image_4.Selectable = true
+image_4.Size = UDim2.new(1, 0, 1, 0)
+image_4.Image = "rbxassetid://3570695787"
+image_4.ImageColor3 = Color3.fromRGB(122, 36, 50)
+image_4.ScaleType = Enum.ScaleType.Slice
+image_4.SliceCenter = Rect.new(100, 100, 100, 100)
+image_4.SliceScale = 0.050
+
 -- Scripts:
 
-local function MXDT_fake_script() -- Toggle.LocalScript 
+local function QTQA_fake_script() -- Toggle.LocalScript 
 	local script = Instance.new('LocalScript', Toggle)
 
 	script.Parent.MouseButton1Click:Connect(function()
@@ -262,8 +305,8 @@ local function MXDT_fake_script() -- Toggle.LocalScript
 		end
 	end)
 end
-coroutine.wrap(MXDT_fake_script)()
-local function NEQCGTI_fake_script() -- Toggle_2.LocalScript 
+coroutine.wrap(QTQA_fake_script)()
+local function DKJX_fake_script() -- Toggle_2.LocalScript 
 	local script = Instance.new('LocalScript', Toggle_2)
 
 	local defaultwalkid = game.Players.LocalPlayer.Character.Animate.walk.WalkAnim.AnimationId
@@ -286,8 +329,8 @@ local function NEQCGTI_fake_script() -- Toggle_2.LocalScript
 		end
 	end)
 end
-coroutine.wrap(NEQCGTI_fake_script)()
-local function XUBWR_fake_script() -- Toggle_3.LocalScript 
+coroutine.wrap(DKJX_fake_script)()
+local function WPOJ_fake_script() -- Toggle_3.LocalScript 
 	local script = Instance.new('LocalScript', Toggle_3)
 
 	
@@ -301,8 +344,18 @@ local function XUBWR_fake_script() -- Toggle_3.LocalScript
 		end
 	end)
 end
-coroutine.wrap(XUBWR_fake_script)()
-local function RJKMVF_fake_script() -- HoodFighting.LocalScript 
+coroutine.wrap(WPOJ_fake_script)()
+local function WDWE_fake_script() -- Button.LocalScript 
+	local script = Instance.new('LocalScript', Button)
+
+	
+	script.Parent.MouseButton1Click:Connect(function()
+		local char = game.Players.LocalPlayer.Character
+		char.Humanoid.Health = 0
+	end)
+end
+coroutine.wrap(WDWE_fake_script)()
+local function RQVDJO_fake_script() -- HoodFighting.LocalScript 
 	local script = Instance.new('LocalScript', HoodFighting)
 
 	local main = script.Parent.Main
@@ -350,4 +403,4 @@ local function RJKMVF_fake_script() -- HoodFighting.LocalScript
 		wait()
 	end
 end
-coroutine.wrap(RJKMVF_fake_script)()
+coroutine.wrap(RQVDJO_fake_script)()
