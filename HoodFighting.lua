@@ -30,6 +30,9 @@ local Button = Instance.new("ImageButton")
 local TextLabel = Instance.new("TextLabel")
 local Credits = Instance.new("ImageLabel")
 local Text_6 = Instance.new("TextLabel")
+local DestroyGUI = Instance.new("ImageLabel")
+local Button_2 = Instance.new("ImageButton")
+local TextLabel_2 = Instance.new("TextLabel")
 
 HoodFighting.Name = "HoodFighting"
 HoodFighting.Parent = game.CoreGui
@@ -383,9 +386,44 @@ Text_6.Text = "Developed by cj#1211"
 Text_6.TextColor3 = Color3.fromRGB(233, 69, 96)
 Text_6.TextSize = 14.000
 
+DestroyGUI.Name = "DestroyGUI"
+DestroyGUI.Parent = Holder
+DestroyGUI.BackgroundColor3 = Color3.fromRGB(22, 33, 62)
+DestroyGUI.BackgroundTransparency = 1.000
+DestroyGUI.Position = UDim2.new(0.0250000339, 0, 0, 0)
+DestroyGUI.Size = UDim2.new(0, 506, 0, 45)
+DestroyGUI.Image = "rbxassetid://3570695787"
+DestroyGUI.ImageColor3 = Color3.fromRGB(22, 33, 62)
+DestroyGUI.ScaleType = Enum.ScaleType.Slice
+DestroyGUI.SliceCenter = Rect.new(100, 100, 100, 100)
+DestroyGUI.SliceScale = 0.040
+
+Button_2.Name = "Button"
+Button_2.Parent = DestroyGUI
+Button_2.AnchorPoint = Vector2.new(0.5, 0.5)
+Button_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Button_2.BackgroundTransparency = 1.000
+Button_2.Position = UDim2.new(0.5, 0, 0.5, 0)
+Button_2.Size = UDim2.new(0.970000029, 0, 0.800000012, 0)
+Button_2.ZIndex = 2
+Button_2.Image = "rbxassetid://3570695787"
+Button_2.ImageColor3 = Color3.fromRGB(122, 36, 50)
+Button_2.ScaleType = Enum.ScaleType.Slice
+Button_2.SliceCenter = Rect.new(100, 100, 100, 100)
+Button_2.SliceScale = 0.050
+
+TextLabel_2.Parent = Button_2
+TextLabel_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_2.BackgroundTransparency = 1.000
+TextLabel_2.Size = UDim2.new(1, 0, 1, 0)
+TextLabel_2.Font = Enum.Font.ArialBold
+TextLabel_2.Text = "Destroy GUI"
+TextLabel_2.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_2.TextSize = 14.000
+
 -- Scripts:
 
-local function HCLE_fake_script() -- Toggle.LocalScript 
+local function ULNRBQA_fake_script() -- Toggle.LocalScript 
 	local script = Instance.new('LocalScript', Toggle)
 
 	script.Parent.MouseButton1Click:Connect(function()
@@ -397,12 +435,14 @@ local function HCLE_fake_script() -- Toggle.LocalScript
 		end
 	end)
 end
-coroutine.wrap(HCLE_fake_script)()
-local function CZSAFN_fake_script() -- Toggle_2.LocalScript 
+coroutine.wrap(ULNRBQA_fake_script)()
+local function UIHDEVU_fake_script() -- Toggle_2.LocalScript 
 	local script = Instance.new('LocalScript', Toggle_2)
 
 	local defaultwalkid = game.Players.LocalPlayer.Character.Animate.walk.WalkAnim.AnimationId
 	local defaultrunid = game.Players.LocalPlayer.Character.Animate.run.RunAnim.AnimationId
+	_G.defaultrun = defaultrunid
+	_G.defaultwalk = defaultwalkid
 	local walkAnim = 'rbxassetid://5408967895'
 	local runAnim = 'rbxassetid://4767669175'
 	
@@ -421,8 +461,8 @@ local function CZSAFN_fake_script() -- Toggle_2.LocalScript
 		end
 	end)
 end
-coroutine.wrap(CZSAFN_fake_script)()
-local function VWGORZA_fake_script() -- Toggle_3.LocalScript 
+coroutine.wrap(UIHDEVU_fake_script)()
+local function CNGGI_fake_script() -- Toggle_3.LocalScript 
 	local script = Instance.new('LocalScript', Toggle_3)
 
 	
@@ -436,8 +476,8 @@ local function VWGORZA_fake_script() -- Toggle_3.LocalScript
 		end
 	end)
 end
-coroutine.wrap(VWGORZA_fake_script)()
-local function HPFAQRT_fake_script() -- PlayerName.LocalScript 
+coroutine.wrap(CNGGI_fake_script)()
+local function NERZN_fake_script() -- PlayerName.LocalScript 
 	local script = Instance.new('LocalScript', PlayerName)
 
 	function findPlayer(str)
@@ -452,8 +492,8 @@ local function HPFAQRT_fake_script() -- PlayerName.LocalScript
 		_G.KillAuraOpponent = findPlayer(script.Parent.Text)
 	end)
 end
-coroutine.wrap(HPFAQRT_fake_script)()
-local function ECHBIQY_fake_script() -- Toggle_4.LocalScript 
+coroutine.wrap(NERZN_fake_script)()
+local function XHWUS_fake_script() -- Toggle_4.LocalScript 
 	local script = Instance.new('LocalScript', Toggle_4)
 
 	
@@ -467,8 +507,8 @@ local function ECHBIQY_fake_script() -- Toggle_4.LocalScript
 		end
 	end)
 end
-coroutine.wrap(ECHBIQY_fake_script)()
-local function GWOITB_fake_script() -- Button.LocalScript 
+coroutine.wrap(XHWUS_fake_script)()
+local function QIZSXLP_fake_script() -- Button.LocalScript 
 	local script = Instance.new('LocalScript', Button)
 
 	
@@ -477,8 +517,18 @@ local function GWOITB_fake_script() -- Button.LocalScript
 		char.Humanoid.Health = 0
 	end)
 end
-coroutine.wrap(GWOITB_fake_script)()
-local function KRYAG_fake_script() -- HoodFighting.LocalScript 
+coroutine.wrap(QIZSXLP_fake_script)()
+local function ATHNI_fake_script() -- Button_2.LocalScript 
+	local script = Instance.new('LocalScript', Button_2)
+
+	
+	script.Parent.MouseButton1Click:Connect(function()
+		local char = game.Players.LocalPlayer.Character
+		char.Humanoid.Health = 0
+	end)
+end
+coroutine.wrap(ATHNI_fake_script)()
+local function DKKN_fake_script() -- HoodFighting.LocalScript 
 	local script = Instance.new('LocalScript', HoodFighting)
 
 	local main = script.Parent.Main
@@ -490,7 +540,7 @@ local function KRYAG_fake_script() -- HoodFighting.LocalScript
 	
 	main.Draggable = true
 	
-	uis.InputBegan:Connect(function(key, gpe)
+	local inputConnection = uis.InputBegan:Connect(function(key, gpe)
 		if gpe then return end
 		if key.KeyCode == Enum.KeyCode.F and _G.AutoCounterFreeze then
 			f = not f
@@ -518,12 +568,8 @@ local function KRYAG_fake_script() -- HoodFighting.LocalScript
 		end
 		return ot(self, unpack(args))
 	end)
-	setreadonly(mt, true)
 	
-	
-	
-	-- Auto Counter Freeze
-	while true do
+	local mainfunc = function()
 		if f and game.Players.LocalPlayer.Character:FindFirstChild("Combat") then
 			local event = game.Players.LocalPlayer.Character.Combat.Event
 			event:FireServer(4, 1)
@@ -532,13 +578,35 @@ local function KRYAG_fake_script() -- HoodFighting.LocalScript
 			pcall(function()
 				local opponent = _G.KillAuraOpponent
 				local theirCharacter = opponent.Character
-				local pos = theirCharacter.HumanoidRootPart.Position - (theirCharacter.HumanoidRootPart.CFrame.lookVector * 3)
+				local pos = theirCharacter.HumanoidRootPart.Position + (theirCharacter.HumanoidRootPart.CFrame.lookVector / 3)
 				local lookat = theirCharacter.HumanoidRootPart.Position
 				
 				char.HumanoidRootPart.CFrame = CFrame.new(pos, lookat)
 			end)
 		end
+	end
+	
+	main.Holder.DestroyGUI.Button.MouseButton1Click:Connect(function()
+		mainfunc = function()
+			return 'stop'
+		end
+		mt.__namecall = ot
+		inputConnection:Disconnect()
+		main.Parent:Destroy()
+		if char and char:FindFirstChild("Animate") then
+			char.Animate.run.RunAnim.AnimationId = _G.defaultrun
+			char.Animate.walk.WalkAnim.AnimationId = _G.defaultrun
+		end
+		_G.AutoCounterFreeze = false
+		_G.WalkAnimation = false
+		_G.NoCooldown = false
+		_G.KillAura = false
+	end)
+	
+	-- Auto Counter Freeze
+	while true do
+		if mainfunc() == 'stop' then break end
 		wait()
 	end
 end
-coroutine.wrap(KRYAG_fake_script)()
+coroutine.wrap(DKKN_fake_script)()
