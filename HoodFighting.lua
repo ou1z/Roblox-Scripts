@@ -36,6 +36,9 @@ local Button_2 = Instance.new("ImageButton")
 local TextLabel_2 = Instance.new("TextLabel")
 local Credits = Instance.new("ImageLabel")
 local Text_7 = Instance.new("TextLabel")
+local LightingColor = Instance.new("ImageLabel")
+local Text_8 = Instance.new("TextLabel")
+local PlayerName_3 = Instance.new("TextBox")
 
 
 HoodFighting.Name = "HoodFighting"
@@ -105,7 +108,7 @@ Holder.BackgroundTransparency = 1.000
 Holder.BorderSizePixel = 0
 Holder.Position = UDim2.new(0, 0, 0.226999998, 0)
 Holder.Size = UDim2.new(0, 527, 0, 222)
-Holder.CanvasPosition = Vector2.new(0, 150)
+Holder.CanvasPosition = Vector2.new(0, 354.000031)
 Holder.ScrollBarThickness = 1
 
 UIListLayout.Parent = Holder
@@ -464,9 +467,49 @@ Text_7.Text = "Developed by cj#1211"
 Text_7.TextColor3 = Color3.fromRGB(233, 69, 96)
 Text_7.TextSize = 14.000
 
+LightingColor.Name = "LightingColor"
+LightingColor.Parent = Holder
+LightingColor.BackgroundColor3 = Color3.fromRGB(22, 33, 62)
+LightingColor.BackgroundTransparency = 1.000
+LightingColor.Position = UDim2.new(0.0250000339, 0, 0, 0)
+LightingColor.Size = UDim2.new(0, 506, 0, 45)
+LightingColor.Image = "rbxassetid://3570695787"
+LightingColor.ImageColor3 = Color3.fromRGB(22, 33, 62)
+LightingColor.ScaleType = Enum.ScaleType.Slice
+LightingColor.SliceCenter = Rect.new(100, 100, 100, 100)
+LightingColor.SliceScale = 0.040
+
+Text_8.Name = "Text"
+Text_8.Parent = LightingColor
+Text_8.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Text_8.BackgroundTransparency = 1.000
+Text_8.BorderColor3 = Color3.fromRGB(27, 42, 53)
+Text_8.Position = UDim2.new(0.0573122539, 0, 0, 0)
+Text_8.Size = UDim2.new(0, 279, 0, 45)
+Text_8.Font = Enum.Font.ArialBold
+Text_8.Text = "Lighting Color (RGB)"
+Text_8.TextColor3 = Color3.fromRGB(255, 255, 255)
+Text_8.TextSize = 14.000
+Text_8.TextXAlignment = Enum.TextXAlignment.Left
+
+PlayerName_3.Name = "PlayerName"
+PlayerName_3.Parent = LightingColor
+PlayerName_3.BackgroundColor3 = Color3.fromRGB(31, 31, 31)
+PlayerName_3.BorderSizePixel = 0
+PlayerName_3.Position = UDim2.new(0.75, 0, 0, 0)
+PlayerName_3.Size = UDim2.new(0, 127, 0, 45)
+PlayerName_3.ClearTextOnFocus = false
+PlayerName_3.Font = Enum.Font.SourceSans
+PlayerName_3.PlaceholderColor3 = Color3.fromRGB(178, 178, 178)
+PlayerName_3.PlaceholderText = "RGB (default: 112,112,112)"
+PlayerName_3.Text = ""
+PlayerName_3.TextColor3 = Color3.fromRGB(255, 255, 255)
+PlayerName_3.TextSize = 14.000
+PlayerName_3.TextWrapped = true
+
 -- Scripts:
 
-local function NSJL_fake_script() -- Toggle.LocalScript 
+local function GPSBR_fake_script() -- Toggle.LocalScript 
 	local script = Instance.new('LocalScript', Toggle)
 
 	script.Parent.MouseButton1Click:Connect(function()
@@ -478,8 +521,8 @@ local function NSJL_fake_script() -- Toggle.LocalScript
 		end
 	end)
 end
-coroutine.wrap(NSJL_fake_script)()
-local function XIUJ_fake_script() -- Toggle_2.LocalScript 
+coroutine.wrap(GPSBR_fake_script)()
+local function NVILQ_fake_script() -- Toggle_2.LocalScript 
 	local script = Instance.new('LocalScript', Toggle_2)
 
 	local defaultwalkid = game.Players.LocalPlayer.Character.Animate.walk.WalkAnim.AnimationId
@@ -504,8 +547,8 @@ local function XIUJ_fake_script() -- Toggle_2.LocalScript
 		end
 	end)
 end
-coroutine.wrap(XIUJ_fake_script)()
-local function YISZO_fake_script() -- Toggle_3.LocalScript 
+coroutine.wrap(NVILQ_fake_script)()
+local function MQCWFCZ_fake_script() -- Toggle_3.LocalScript 
 	local script = Instance.new('LocalScript', Toggle_3)
 
 	
@@ -519,8 +562,8 @@ local function YISZO_fake_script() -- Toggle_3.LocalScript
 		end
 	end)
 end
-coroutine.wrap(YISZO_fake_script)()
-local function JTSZ_fake_script() -- PlayerName.LocalScript 
+coroutine.wrap(MQCWFCZ_fake_script)()
+local function BCDVE_fake_script() -- PlayerName.LocalScript 
 	local script = Instance.new('LocalScript', PlayerName)
 
 	function findPlayer(str)
@@ -535,8 +578,8 @@ local function JTSZ_fake_script() -- PlayerName.LocalScript
 		_G.KillAuraOpponent = findPlayer(script.Parent.Text)
 	end)
 end
-coroutine.wrap(JTSZ_fake_script)()
-local function MAHKD_fake_script() -- Toggle_4.LocalScript 
+coroutine.wrap(BCDVE_fake_script)()
+local function OKTNXCB_fake_script() -- Toggle_4.LocalScript 
 	local script = Instance.new('LocalScript', Toggle_4)
 
 	
@@ -550,8 +593,8 @@ local function MAHKD_fake_script() -- Toggle_4.LocalScript
 		end
 	end)
 end
-coroutine.wrap(MAHKD_fake_script)()
-local function YTQX_fake_script() -- PlayerName_2.LocalScript 
+coroutine.wrap(OKTNXCB_fake_script)()
+local function DTLO_fake_script() -- PlayerName_2.LocalScript 
 	local script = Instance.new('LocalScript', PlayerName_2)
 
 	script.Parent.FocusLost:Connect(function(enter)
@@ -560,8 +603,8 @@ local function YTQX_fake_script() -- PlayerName_2.LocalScript
 		end
 	end)
 end
-coroutine.wrap(YTQX_fake_script)()
-local function RQDGTR_fake_script() -- Button.LocalScript 
+coroutine.wrap(DTLO_fake_script)()
+local function TLJIA_fake_script() -- Button.LocalScript 
 	local script = Instance.new('LocalScript', Button)
 
 	
@@ -570,8 +613,8 @@ local function RQDGTR_fake_script() -- Button.LocalScript
 		char.Humanoid.Health = 0
 	end)
 end
-coroutine.wrap(RQDGTR_fake_script)()
-local function OFKES_fake_script() -- Button_2.LocalScript 
+coroutine.wrap(TLJIA_fake_script)()
+local function YIUNSVK_fake_script() -- Button_2.LocalScript 
 	local script = Instance.new('LocalScript', Button_2)
 
 	
@@ -580,8 +623,24 @@ local function OFKES_fake_script() -- Button_2.LocalScript
 		char.Humanoid.Health = 0
 	end)
 end
-coroutine.wrap(OFKES_fake_script)()
-local function UMLHAH_fake_script() -- HoodFighting.LocalScript 
+coroutine.wrap(YIUNSVK_fake_script)()
+local function BRNUAUF_fake_script() -- PlayerName_3.LocalScript 
+	local script = Instance.new('LocalScript', PlayerName_3)
+
+	script.Parent.FocusLost:Connect(function(enter)
+		if enter then
+			local text = script.Parent.Text
+			local split = text:split(',')
+			if #split ~= 3 then return end
+			local r = tonumber(split[1])
+			local g = tonumber(split[2])
+			local b = tonumber(split[3])
+			game.Lighting.Ambient = Color3.fromRGB(r,g,b)
+		end
+	end)
+end
+coroutine.wrap(BRNUAUF_fake_script)()
+local function YLVQO_fake_script() -- HoodFighting.LocalScript 
 	local script = Instance.new('LocalScript', HoodFighting)
 
 	local main = script.Parent.Main
@@ -664,4 +723,4 @@ local function UMLHAH_fake_script() -- HoodFighting.LocalScript
 		wait()
 	end
 end
-coroutine.wrap(UMLHAH_fake_script)()
+coroutine.wrap(YLVQO_fake_script)()
