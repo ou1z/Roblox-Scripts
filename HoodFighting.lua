@@ -20,11 +20,16 @@ local NoCooldown = Instance.new("ImageLabel")
 local Text_4 = Instance.new("TextLabel")
 local Toggle_3 = Instance.new("TextButton")
 local image_3 = Instance.new("ImageLabel")
+local KillAura = Instance.new("ImageLabel")
+local Text_5 = Instance.new("TextLabel")
+local PlayerName = Instance.new("TextBox")
+local Toggle_4 = Instance.new("TextButton")
+local image_4 = Instance.new("ImageLabel")
 local Reset = Instance.new("ImageLabel")
 local Button = Instance.new("ImageButton")
 local TextLabel = Instance.new("TextLabel")
 local Credits = Instance.new("ImageLabel")
-local Text_5 = Instance.new("TextLabel")
+local Text_6 = Instance.new("TextLabel")
 
 HoodFighting.Name = "HoodFighting"
 HoodFighting.Parent = game.CoreGui
@@ -254,6 +259,73 @@ image_3.ScaleType = Enum.ScaleType.Slice
 image_3.SliceCenter = Rect.new(100, 100, 100, 100)
 image_3.SliceScale = 0.050
 
+KillAura.Name = "KillAura"
+KillAura.Parent = Holder
+KillAura.BackgroundColor3 = Color3.fromRGB(22, 33, 62)
+KillAura.BackgroundTransparency = 1.000
+KillAura.Position = UDim2.new(0.0250000339, 0, 0, 0)
+KillAura.Size = UDim2.new(0, 506, 0, 45)
+KillAura.Image = "rbxassetid://3570695787"
+KillAura.ImageColor3 = Color3.fromRGB(22, 33, 62)
+KillAura.ScaleType = Enum.ScaleType.Slice
+KillAura.SliceCenter = Rect.new(100, 100, 100, 100)
+KillAura.SliceScale = 0.040
+
+Text_5.Name = "Text"
+Text_5.Parent = KillAura
+Text_5.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Text_5.BackgroundTransparency = 1.000
+Text_5.BorderColor3 = Color3.fromRGB(27, 42, 53)
+Text_5.Position = UDim2.new(0.0573122539, 0, 0, 0)
+Text_5.Size = UDim2.new(0, 279, 0, 45)
+Text_5.Font = Enum.Font.ArialBold
+Text_5.Text = "Kill Aura"
+Text_5.TextColor3 = Color3.fromRGB(255, 255, 255)
+Text_5.TextSize = 14.000
+Text_5.TextXAlignment = Enum.TextXAlignment.Left
+
+PlayerName.Name = "PlayerName"
+PlayerName.Parent = KillAura
+PlayerName.BackgroundColor3 = Color3.fromRGB(31, 31, 31)
+PlayerName.BorderSizePixel = 0
+PlayerName.Position = UDim2.new(0.5, 0, 0, 0)
+PlayerName.Size = UDim2.new(0, 127, 0, 45)
+PlayerName.ClearTextOnFocus = false
+PlayerName.Font = Enum.Font.SourceSans
+PlayerName.PlaceholderText = "Player Name"
+PlayerName.Text = ""
+PlayerName.TextColor3 = Color3.fromRGB(255, 255, 255)
+PlayerName.TextSize = 14.000
+PlayerName.TextWrapped = true
+
+Toggle_4.Name = "Toggle"
+Toggle_4.Parent = KillAura
+Toggle_4.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Toggle_4.BackgroundTransparency = 1.000
+Toggle_4.BorderSizePixel = 0
+Toggle_4.Position = UDim2.new(0.751999974, 0, 0, 0)
+Toggle_4.Size = UDim2.new(0, 126, 0, 45)
+Toggle_4.ZIndex = 4
+Toggle_4.Font = Enum.Font.SourceSans
+Toggle_4.TextColor3 = Color3.fromRGB(0, 0, 0)
+Toggle_4.TextSize = 14.000
+
+image_4.Name = "image"
+image_4.Parent = Toggle_4
+image_4.Active = true
+image_4.AnchorPoint = Vector2.new(0.5, 0.5)
+image_4.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+image_4.BackgroundTransparency = 1.000
+image_4.Position = UDim2.new(0.492063493, 0, 0.5, 0)
+image_4.Selectable = true
+image_4.Size = UDim2.new(1, 0, 1, 0)
+image_4.ZIndex = 55
+image_4.Image = "rbxassetid://3570695787"
+image_4.ImageColor3 = Color3.fromRGB(122, 36, 50)
+image_4.ScaleType = Enum.ScaleType.Slice
+image_4.SliceCenter = Rect.new(100, 100, 100, 100)
+image_4.SliceScale = 0.050
+
 Reset.Name = "Reset"
 Reset.Parent = Holder
 Reset.BackgroundColor3 = Color3.fromRGB(22, 33, 62)
@@ -285,7 +357,7 @@ TextLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 TextLabel.BackgroundTransparency = 1.000
 TextLabel.Size = UDim2.new(1, 0, 1, 0)
 TextLabel.Font = Enum.Font.ArialBold
-TextLabel.Text = "Reset"
+TextLabel.Text = "Reset Character"
 TextLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
 TextLabel.TextSize = 14.000
 
@@ -301,19 +373,19 @@ Credits.ScaleType = Enum.ScaleType.Slice
 Credits.SliceCenter = Rect.new(100, 100, 100, 100)
 Credits.SliceScale = 0.040
 
-Text_5.Name = "Text"
-Text_5.Parent = Credits
-Text_5.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-Text_5.BackgroundTransparency = 1.000
-Text_5.Size = UDim2.new(1, 0, 1, 0)
-Text_5.Font = Enum.Font.ArialBold
-Text_5.Text = "Developed by cj#1211"
-Text_5.TextColor3 = Color3.fromRGB(233, 69, 96)
-Text_5.TextSize = 14.000
+Text_6.Name = "Text"
+Text_6.Parent = Credits
+Text_6.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Text_6.BackgroundTransparency = 1.000
+Text_6.Size = UDim2.new(1, 0, 1, 0)
+Text_6.Font = Enum.Font.ArialBold
+Text_6.Text = "Developed by cj#1211"
+Text_6.TextColor3 = Color3.fromRGB(233, 69, 96)
+Text_6.TextSize = 14.000
 
 -- Scripts:
 
-local function LZSMFFP_fake_script() -- Toggle.LocalScript 
+local function HCLE_fake_script() -- Toggle.LocalScript 
 	local script = Instance.new('LocalScript', Toggle)
 
 	script.Parent.MouseButton1Click:Connect(function()
@@ -325,8 +397,8 @@ local function LZSMFFP_fake_script() -- Toggle.LocalScript
 		end
 	end)
 end
-coroutine.wrap(LZSMFFP_fake_script)()
-local function ZUIK_fake_script() -- Toggle_2.LocalScript 
+coroutine.wrap(HCLE_fake_script)()
+local function CZSAFN_fake_script() -- Toggle_2.LocalScript 
 	local script = Instance.new('LocalScript', Toggle_2)
 
 	local defaultwalkid = game.Players.LocalPlayer.Character.Animate.walk.WalkAnim.AnimationId
@@ -349,8 +421,8 @@ local function ZUIK_fake_script() -- Toggle_2.LocalScript
 		end
 	end)
 end
-coroutine.wrap(ZUIK_fake_script)()
-local function MEWUQZA_fake_script() -- Toggle_3.LocalScript 
+coroutine.wrap(CZSAFN_fake_script)()
+local function VWGORZA_fake_script() -- Toggle_3.LocalScript 
 	local script = Instance.new('LocalScript', Toggle_3)
 
 	
@@ -364,8 +436,39 @@ local function MEWUQZA_fake_script() -- Toggle_3.LocalScript
 		end
 	end)
 end
-coroutine.wrap(MEWUQZA_fake_script)()
-local function OHCF_fake_script() -- Button.LocalScript 
+coroutine.wrap(VWGORZA_fake_script)()
+local function HPFAQRT_fake_script() -- PlayerName.LocalScript 
+	local script = Instance.new('LocalScript', PlayerName)
+
+	function findPlayer(str)
+		for i,v in pairs(game.Players:GetPlayers()) do
+			if v.Name:lower():match("^"..str:lower()) then
+				return v
+			end
+		end
+	end
+	
+	script.Parent.FocusLost:Connect(function(enter)
+		_G.KillAuraOpponent = findPlayer(script.Parent.Text)
+	end)
+end
+coroutine.wrap(HPFAQRT_fake_script)()
+local function ECHBIQY_fake_script() -- Toggle_4.LocalScript 
+	local script = Instance.new('LocalScript', Toggle_4)
+
+	
+	script.Parent.MouseButton1Click:Connect(function()
+		local char = game.Players.LocalPlayer.Character
+		_G.KillAura = not _G.KillAura
+		if _G.KillAura then
+			game:GetService('TweenService'):Create(script.Parent.image, TweenInfo.new(0.3), {ImageColor3 = Color3.fromRGB(0, 170, 0)}):Play()
+		else
+			game:GetService('TweenService'):Create(script.Parent.image, TweenInfo.new(0.3), {ImageColor3 = Color3.fromRGB(122, 36, 50)}):Play()
+		end
+	end)
+end
+coroutine.wrap(ECHBIQY_fake_script)()
+local function GWOITB_fake_script() -- Button.LocalScript 
 	local script = Instance.new('LocalScript', Button)
 
 	
@@ -374,13 +477,16 @@ local function OHCF_fake_script() -- Button.LocalScript
 		char.Humanoid.Health = 0
 	end)
 end
-coroutine.wrap(OHCF_fake_script)()
-local function GACLY_fake_script() -- HoodFighting.LocalScript 
+coroutine.wrap(GWOITB_fake_script)()
+local function KRYAG_fake_script() -- HoodFighting.LocalScript 
 	local script = Instance.new('LocalScript', HoodFighting)
 
 	local main = script.Parent.Main
 	local uis = game:GetService('UserInputService')
 	local f = false
+	local plr = game.Players.LocalPlayer
+	local char = plr.Character or plr.CharacterAdded:wait()
+	
 	
 	main.Draggable = true
 	
@@ -396,9 +502,11 @@ local function GACLY_fake_script() -- HoodFighting.LocalScript
 	_G.AutoCounterFreeze = false
 	_G.WalkAnimation = false
 	_G.NoCooldown = false
+	_G.KillAura = false
 	
 	
 	
+	-- No Cooldown
 	local mt = getrawmetatable(game)
 	local ot = mt.__namecall
 	setreadonly(mt, false)
@@ -414,13 +522,23 @@ local function GACLY_fake_script() -- HoodFighting.LocalScript
 	
 	
 	
-	
+	-- Auto Counter Freeze
 	while true do
 		if f and game.Players.LocalPlayer.Character:FindFirstChild("Combat") then
 			local event = game.Players.LocalPlayer.Character.Combat.Event
 			event:FireServer(4, 1)
 		end
+		if _G.KillAura and (_G.KillAuraOpponent and _G.KillAuraOpponent ~= plr) then
+			pcall(function()
+				local opponent = _G.KillAuraOpponent
+				local theirCharacter = opponent.Character
+				local pos = theirCharacter.HumanoidRootPart.Position + (theirCharacter.HumanoidRootPart.CFrame.lookVector / 3)
+				local lookat = theirCharacter.HumanoidRootPart.Position
+				
+				char.HumanoidRootPart.CFrame = CFrame.new(pos, lookat)
+			end)
+		end
 		wait()
 	end
 end
-coroutine.wrap(GACLY_fake_script)()
+coroutine.wrap(KRYAG_fake_script)()
