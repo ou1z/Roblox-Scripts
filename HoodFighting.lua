@@ -40,7 +40,6 @@ local LightingColor = Instance.new("ImageLabel")
 local Text_8 = Instance.new("TextLabel")
 local PlayerName_3 = Instance.new("TextBox")
 
-
 HoodFighting.Name = "HoodFighting"
 HoodFighting.Parent = game.CoreGui
 HoodFighting.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
@@ -509,7 +508,7 @@ PlayerName_3.TextWrapped = true
 
 -- Scripts:
 
-local function GPSBR_fake_script() -- Toggle.LocalScript 
+local function KOUB_fake_script() -- Toggle.LocalScript 
 	local script = Instance.new('LocalScript', Toggle)
 
 	script.Parent.MouseButton1Click:Connect(function()
@@ -521,8 +520,8 @@ local function GPSBR_fake_script() -- Toggle.LocalScript
 		end
 	end)
 end
-coroutine.wrap(GPSBR_fake_script)()
-local function NVILQ_fake_script() -- Toggle_2.LocalScript 
+coroutine.wrap(KOUB_fake_script)()
+local function HQPGF_fake_script() -- Toggle_2.LocalScript 
 	local script = Instance.new('LocalScript', Toggle_2)
 
 	local defaultwalkid = game.Players.LocalPlayer.Character.Animate.walk.WalkAnim.AnimationId
@@ -547,8 +546,8 @@ local function NVILQ_fake_script() -- Toggle_2.LocalScript
 		end
 	end)
 end
-coroutine.wrap(NVILQ_fake_script)()
-local function MQCWFCZ_fake_script() -- Toggle_3.LocalScript 
+coroutine.wrap(HQPGF_fake_script)()
+local function VIDX_fake_script() -- Toggle_3.LocalScript 
 	local script = Instance.new('LocalScript', Toggle_3)
 
 	
@@ -562,8 +561,8 @@ local function MQCWFCZ_fake_script() -- Toggle_3.LocalScript
 		end
 	end)
 end
-coroutine.wrap(MQCWFCZ_fake_script)()
-local function BCDVE_fake_script() -- PlayerName.LocalScript 
+coroutine.wrap(VIDX_fake_script)()
+local function ZIKBZW_fake_script() -- PlayerName.LocalScript 
 	local script = Instance.new('LocalScript', PlayerName)
 
 	function findPlayer(str)
@@ -578,8 +577,8 @@ local function BCDVE_fake_script() -- PlayerName.LocalScript
 		_G.KillAuraOpponent = findPlayer(script.Parent.Text)
 	end)
 end
-coroutine.wrap(BCDVE_fake_script)()
-local function OKTNXCB_fake_script() -- Toggle_4.LocalScript 
+coroutine.wrap(ZIKBZW_fake_script)()
+local function VTUMF_fake_script() -- Toggle_4.LocalScript 
 	local script = Instance.new('LocalScript', Toggle_4)
 
 	
@@ -593,8 +592,8 @@ local function OKTNXCB_fake_script() -- Toggle_4.LocalScript
 		end
 	end)
 end
-coroutine.wrap(OKTNXCB_fake_script)()
-local function DTLO_fake_script() -- PlayerName_2.LocalScript 
+coroutine.wrap(VTUMF_fake_script)()
+local function MAXAUB_fake_script() -- PlayerName_2.LocalScript 
 	local script = Instance.new('LocalScript', PlayerName_2)
 
 	script.Parent.FocusLost:Connect(function(enter)
@@ -603,8 +602,8 @@ local function DTLO_fake_script() -- PlayerName_2.LocalScript
 		end
 	end)
 end
-coroutine.wrap(DTLO_fake_script)()
-local function TLJIA_fake_script() -- Button.LocalScript 
+coroutine.wrap(MAXAUB_fake_script)()
+local function VVRGAK_fake_script() -- Button.LocalScript 
 	local script = Instance.new('LocalScript', Button)
 
 	
@@ -613,8 +612,8 @@ local function TLJIA_fake_script() -- Button.LocalScript
 		char.Humanoid.Health = 0
 	end)
 end
-coroutine.wrap(TLJIA_fake_script)()
-local function YIUNSVK_fake_script() -- Button_2.LocalScript 
+coroutine.wrap(VVRGAK_fake_script)()
+local function QHEWC_fake_script() -- Button_2.LocalScript 
 	local script = Instance.new('LocalScript', Button_2)
 
 	
@@ -623,8 +622,8 @@ local function YIUNSVK_fake_script() -- Button_2.LocalScript
 		char.Humanoid.Health = 0
 	end)
 end
-coroutine.wrap(YIUNSVK_fake_script)()
-local function BRNUAUF_fake_script() -- PlayerName_3.LocalScript 
+coroutine.wrap(QHEWC_fake_script)()
+local function FRKQW_fake_script() -- PlayerName_3.LocalScript 
 	local script = Instance.new('LocalScript', PlayerName_3)
 
 	script.Parent.FocusLost:Connect(function(enter)
@@ -639,8 +638,8 @@ local function BRNUAUF_fake_script() -- PlayerName_3.LocalScript
 		end
 	end)
 end
-coroutine.wrap(BRNUAUF_fake_script)()
-local function YLVQO_fake_script() -- HoodFighting.LocalScript 
+coroutine.wrap(FRKQW_fake_script)()
+local function LDWD_fake_script() -- HoodFighting.LocalScript 
 	local script = Instance.new('LocalScript', HoodFighting)
 
 	local main = script.Parent.Main
@@ -711,6 +710,7 @@ local function YLVQO_fake_script() -- HoodFighting.LocalScript
 			char.Animate.run.RunAnim.AnimationId = _G.defaultrun
 			char.Animate.walk.WalkAnim.AnimationId = _G.defaultrun
 		end
+		game.Lighting.Ambient = Color3.fromRGB(112, 112, 112)
 		_G.AutoCounterFreeze = false
 		_G.WalkAnimation = false
 		_G.NoCooldown = false
@@ -723,4 +723,4 @@ local function YLVQO_fake_script() -- HoodFighting.LocalScript
 		wait()
 	end
 end
-coroutine.wrap(YLVQO_fake_script)()
+coroutine.wrap(LDWD_fake_script)()
