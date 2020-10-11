@@ -25,14 +25,17 @@ local Text_5 = Instance.new("TextLabel")
 local PlayerName = Instance.new("TextBox")
 local Toggle_4 = Instance.new("TextButton")
 local image_4 = Instance.new("ImageLabel")
+local WalkSpeed = Instance.new("ImageLabel")
+local Text_6 = Instance.new("TextLabel")
+local PlayerName_2 = Instance.new("TextBox")
 local Reset = Instance.new("ImageLabel")
 local Button = Instance.new("ImageButton")
 local TextLabel = Instance.new("TextLabel")
-local Credits = Instance.new("ImageLabel")
-local Text_6 = Instance.new("TextLabel")
 local DestroyGUI = Instance.new("ImageLabel")
 local Button_2 = Instance.new("ImageButton")
 local TextLabel_2 = Instance.new("TextLabel")
+local Credits = Instance.new("ImageLabel")
+local Text_7 = Instance.new("TextLabel")
 
 HoodFighting.Name = "HoodFighting"
 HoodFighting.Parent = game.CoreGui
@@ -101,6 +104,7 @@ Holder.BackgroundTransparency = 1.000
 Holder.BorderSizePixel = 0
 Holder.Position = UDim2.new(0, 0, 0.226999998, 0)
 Holder.Size = UDim2.new(0, 527, 0, 222)
+Holder.CanvasPosition = Vector2.new(0, 150)
 Holder.ScrollBarThickness = 1
 
 UIListLayout.Parent = Holder
@@ -328,6 +332,45 @@ image_4.ScaleType = Enum.ScaleType.Slice
 image_4.SliceCenter = Rect.new(100, 100, 100, 100)
 image_4.SliceScale = 0.050
 
+WalkSpeed.Name = "WalkSpeed"
+WalkSpeed.Parent = Holder
+WalkSpeed.BackgroundColor3 = Color3.fromRGB(22, 33, 62)
+WalkSpeed.BackgroundTransparency = 1.000
+WalkSpeed.Position = UDim2.new(0.0250000339, 0, 0, 0)
+WalkSpeed.Size = UDim2.new(0, 506, 0, 45)
+WalkSpeed.Image = "rbxassetid://3570695787"
+WalkSpeed.ImageColor3 = Color3.fromRGB(22, 33, 62)
+WalkSpeed.ScaleType = Enum.ScaleType.Slice
+WalkSpeed.SliceCenter = Rect.new(100, 100, 100, 100)
+WalkSpeed.SliceScale = 0.040
+
+Text_6.Name = "Text"
+Text_6.Parent = WalkSpeed
+Text_6.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Text_6.BackgroundTransparency = 1.000
+Text_6.BorderColor3 = Color3.fromRGB(27, 42, 53)
+Text_6.Position = UDim2.new(0.0573122539, 0, 0, 0)
+Text_6.Size = UDim2.new(0, 279, 0, 45)
+Text_6.Font = Enum.Font.ArialBold
+Text_6.Text = "Walk Speed"
+Text_6.TextColor3 = Color3.fromRGB(255, 255, 255)
+Text_6.TextSize = 14.000
+Text_6.TextXAlignment = Enum.TextXAlignment.Left
+
+PlayerName_2.Name = "PlayerName"
+PlayerName_2.Parent = WalkSpeed
+PlayerName_2.BackgroundColor3 = Color3.fromRGB(31, 31, 31)
+PlayerName_2.BorderSizePixel = 0
+PlayerName_2.Position = UDim2.new(0.75, 0, 0, 0)
+PlayerName_2.Size = UDim2.new(0, 127, 0, 45)
+PlayerName_2.ClearTextOnFocus = false
+PlayerName_2.Font = Enum.Font.SourceSans
+PlayerName_2.PlaceholderText = "Speed"
+PlayerName_2.Text = ""
+PlayerName_2.TextColor3 = Color3.fromRGB(255, 255, 255)
+PlayerName_2.TextSize = 14.000
+PlayerName_2.TextWrapped = true
+
 Reset.Name = "Reset"
 Reset.Parent = Holder
 Reset.BackgroundColor3 = Color3.fromRGB(22, 33, 62)
@@ -362,28 +405,6 @@ TextLabel.Font = Enum.Font.ArialBold
 TextLabel.Text = "Reset Character"
 TextLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
 TextLabel.TextSize = 14.000
-
-Credits.Name = "Credits"
-Credits.Parent = Holder
-Credits.BackgroundColor3 = Color3.fromRGB(22, 33, 62)
-Credits.BackgroundTransparency = 1.000
-Credits.Position = UDim2.new(0.0199240986, 0, 0.225225091, 0)
-Credits.Size = UDim2.new(0, 506, 0, 45)
-Credits.Image = "rbxassetid://3570695787"
-Credits.ImageColor3 = Color3.fromRGB(22, 33, 62)
-Credits.ScaleType = Enum.ScaleType.Slice
-Credits.SliceCenter = Rect.new(100, 100, 100, 100)
-Credits.SliceScale = 0.040
-
-Text_6.Name = "Text"
-Text_6.Parent = Credits
-Text_6.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-Text_6.BackgroundTransparency = 1.000
-Text_6.Size = UDim2.new(1, 0, 1, 0)
-Text_6.Font = Enum.Font.ArialBold
-Text_6.Text = "Developed by cj#1211"
-Text_6.TextColor3 = Color3.fromRGB(233, 69, 96)
-Text_6.TextSize = 14.000
 
 DestroyGUI.Name = "DestroyGUI"
 DestroyGUI.Parent = Holder
@@ -420,9 +441,31 @@ TextLabel_2.Text = "Destroy GUI"
 TextLabel_2.TextColor3 = Color3.fromRGB(255, 255, 255)
 TextLabel_2.TextSize = 14.000
 
+Credits.Name = "Credits"
+Credits.Parent = Holder
+Credits.BackgroundColor3 = Color3.fromRGB(22, 33, 62)
+Credits.BackgroundTransparency = 1.000
+Credits.Position = UDim2.new(0.0199240986, 0, 0.225225091, 0)
+Credits.Size = UDim2.new(0, 506, 0, 45)
+Credits.Image = "rbxassetid://3570695787"
+Credits.ImageColor3 = Color3.fromRGB(22, 33, 62)
+Credits.ScaleType = Enum.ScaleType.Slice
+Credits.SliceCenter = Rect.new(100, 100, 100, 100)
+Credits.SliceScale = 0.040
+
+Text_7.Name = "Text"
+Text_7.Parent = Credits
+Text_7.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Text_7.BackgroundTransparency = 1.000
+Text_7.Size = UDim2.new(1, 0, 1, 0)
+Text_7.Font = Enum.Font.ArialBold
+Text_7.Text = "Developed by cj#1211"
+Text_7.TextColor3 = Color3.fromRGB(233, 69, 96)
+Text_7.TextSize = 14.000
+
 -- Scripts:
 
-local function UDXY_fake_script() -- Toggle.LocalScript 
+local function TGOGQ_fake_script() -- Toggle.LocalScript 
 	local script = Instance.new('LocalScript', Toggle)
 
 	script.Parent.MouseButton1Click:Connect(function()
@@ -434,8 +477,8 @@ local function UDXY_fake_script() -- Toggle.LocalScript
 		end
 	end)
 end
-coroutine.wrap(UDXY_fake_script)()
-local function MAJKG_fake_script() -- Toggle_2.LocalScript 
+coroutine.wrap(TGOGQ_fake_script)()
+local function VMYWOW_fake_script() -- Toggle_2.LocalScript 
 	local script = Instance.new('LocalScript', Toggle_2)
 
 	local defaultwalkid = game.Players.LocalPlayer.Character.Animate.walk.WalkAnim.AnimationId
@@ -460,8 +503,8 @@ local function MAJKG_fake_script() -- Toggle_2.LocalScript
 		end
 	end)
 end
-coroutine.wrap(MAJKG_fake_script)()
-local function JQYPJP_fake_script() -- Toggle_3.LocalScript 
+coroutine.wrap(VMYWOW_fake_script)()
+local function RVOERZ_fake_script() -- Toggle_3.LocalScript 
 	local script = Instance.new('LocalScript', Toggle_3)
 
 	
@@ -475,8 +518,8 @@ local function JQYPJP_fake_script() -- Toggle_3.LocalScript
 		end
 	end)
 end
-coroutine.wrap(JQYPJP_fake_script)()
-local function JRGGLEU_fake_script() -- PlayerName.LocalScript 
+coroutine.wrap(RVOERZ_fake_script)()
+local function RBNDVY_fake_script() -- PlayerName.LocalScript 
 	local script = Instance.new('LocalScript', PlayerName)
 
 	function findPlayer(str)
@@ -491,8 +534,8 @@ local function JRGGLEU_fake_script() -- PlayerName.LocalScript
 		_G.KillAuraOpponent = findPlayer(script.Parent.Text)
 	end)
 end
-coroutine.wrap(JRGGLEU_fake_script)()
-local function SUGWBQA_fake_script() -- Toggle_4.LocalScript 
+coroutine.wrap(RBNDVY_fake_script)()
+local function IXXAYFI_fake_script() -- Toggle_4.LocalScript 
 	local script = Instance.new('LocalScript', Toggle_4)
 
 	
@@ -506,8 +549,18 @@ local function SUGWBQA_fake_script() -- Toggle_4.LocalScript
 		end
 	end)
 end
-coroutine.wrap(SUGWBQA_fake_script)()
-local function HITA_fake_script() -- Button.LocalScript 
+coroutine.wrap(IXXAYFI_fake_script)()
+local function GGOR_fake_script() -- PlayerName_2.LocalScript 
+	local script = Instance.new('LocalScript', PlayerName_2)
+
+	script.Parent.FocusLost:Connect(function(enter)
+		if enter and game.Players.LocalPlayer.Character and tonumber(script.Parent.Text) then
+			game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = tonumber(script.Parent.Text)
+		end
+	end)
+end
+coroutine.wrap(GGOR_fake_script)()
+local function DQQPHJ_fake_script() -- Button.LocalScript 
 	local script = Instance.new('LocalScript', Button)
 
 	
@@ -516,8 +569,8 @@ local function HITA_fake_script() -- Button.LocalScript
 		char.Humanoid.Health = 0
 	end)
 end
-coroutine.wrap(HITA_fake_script)()
-local function BOAZZHQ_fake_script() -- Button_2.LocalScript 
+coroutine.wrap(DQQPHJ_fake_script)()
+local function NJWOU_fake_script() -- Button_2.LocalScript 
 	local script = Instance.new('LocalScript', Button_2)
 
 	
@@ -526,8 +579,8 @@ local function BOAZZHQ_fake_script() -- Button_2.LocalScript
 		char.Humanoid.Health = 0
 	end)
 end
-coroutine.wrap(BOAZZHQ_fake_script)()
-local function BWPJMOI_fake_script() -- HoodFighting.LocalScript 
+coroutine.wrap(NJWOU_fake_script)()
+local function LKOG_fake_script() -- HoodFighting.LocalScript 
 	local script = Instance.new('LocalScript', HoodFighting)
 
 	local main = script.Parent.Main
@@ -608,4 +661,4 @@ local function BWPJMOI_fake_script() -- HoodFighting.LocalScript
 		wait()
 	end
 end
-coroutine.wrap(BWPJMOI_fake_script)()
+coroutine.wrap(LKOG_fake_script)()
