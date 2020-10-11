@@ -422,7 +422,7 @@ TextLabel_2.TextSize = 14.000
 
 -- Scripts:
 
-local function PHORO_fake_script() -- Toggle.LocalScript 
+local function ZDZK_fake_script() -- Toggle.LocalScript 
 	local script = Instance.new('LocalScript', Toggle)
 
 	script.Parent.MouseButton1Click:Connect(function()
@@ -434,8 +434,8 @@ local function PHORO_fake_script() -- Toggle.LocalScript
 		end
 	end)
 end
-coroutine.wrap(PHORO_fake_script)()
-local function QHKAIY_fake_script() -- Toggle_2.LocalScript 
+coroutine.wrap(ZDZK_fake_script)()
+local function CCJT_fake_script() -- Toggle_2.LocalScript 
 	local script = Instance.new('LocalScript', Toggle_2)
 
 	local defaultwalkid = game.Players.LocalPlayer.Character.Animate.walk.WalkAnim.AnimationId
@@ -460,8 +460,8 @@ local function QHKAIY_fake_script() -- Toggle_2.LocalScript
 		end
 	end)
 end
-coroutine.wrap(QHKAIY_fake_script)()
-local function LWDRKS_fake_script() -- Toggle_3.LocalScript 
+coroutine.wrap(CCJT_fake_script)()
+local function NKPHS_fake_script() -- Toggle_3.LocalScript 
 	local script = Instance.new('LocalScript', Toggle_3)
 
 	
@@ -475,8 +475,8 @@ local function LWDRKS_fake_script() -- Toggle_3.LocalScript
 		end
 	end)
 end
-coroutine.wrap(LWDRKS_fake_script)()
-local function WRIBR_fake_script() -- PlayerName.LocalScript 
+coroutine.wrap(NKPHS_fake_script)()
+local function NABBET_fake_script() -- PlayerName.LocalScript 
 	local script = Instance.new('LocalScript', PlayerName)
 
 	function findPlayer(str)
@@ -491,8 +491,8 @@ local function WRIBR_fake_script() -- PlayerName.LocalScript
 		_G.KillAuraOpponent = findPlayer(script.Parent.Text)
 	end)
 end
-coroutine.wrap(WRIBR_fake_script)()
-local function KWHW_fake_script() -- Toggle_4.LocalScript 
+coroutine.wrap(NABBET_fake_script)()
+local function MZYRSK_fake_script() -- Toggle_4.LocalScript 
 	local script = Instance.new('LocalScript', Toggle_4)
 
 	
@@ -506,8 +506,8 @@ local function KWHW_fake_script() -- Toggle_4.LocalScript
 		end
 	end)
 end
-coroutine.wrap(KWHW_fake_script)()
-local function SIYD_fake_script() -- Button.LocalScript 
+coroutine.wrap(MZYRSK_fake_script)()
+local function YPGLPQR_fake_script() -- Button.LocalScript 
 	local script = Instance.new('LocalScript', Button)
 
 	
@@ -516,8 +516,8 @@ local function SIYD_fake_script() -- Button.LocalScript
 		char.Humanoid.Health = 0
 	end)
 end
-coroutine.wrap(SIYD_fake_script)()
-local function ECLYOCO_fake_script() -- Button_2.LocalScript 
+coroutine.wrap(YPGLPQR_fake_script)()
+local function GUFYC_fake_script() -- Button_2.LocalScript 
 	local script = Instance.new('LocalScript', Button_2)
 
 	
@@ -526,8 +526,8 @@ local function ECLYOCO_fake_script() -- Button_2.LocalScript
 		char.Humanoid.Health = 0
 	end)
 end
-coroutine.wrap(ECLYOCO_fake_script)()
-local function QGARA_fake_script() -- HoodFighting.LocalScript 
+coroutine.wrap(GUFYC_fake_script)()
+local function WHWCG_fake_script() -- HoodFighting.LocalScript 
 	local script = Instance.new('LocalScript', HoodFighting)
 
 	local main = script.Parent.Main
@@ -577,7 +577,7 @@ local function QGARA_fake_script() -- HoodFighting.LocalScript
 			pcall(function()
 				local opponent = _G.KillAuraOpponent
 				local theirCharacter = opponent.Character
-				local pos = theirCharacter.HumanoidRootPart.Position + (theirCharacter.HumanoidRootPart.CFrame.lookVector / 3)
+				local pos = theirCharacter.HumanoidRootPart.Position - (theirCharacter.HumanoidRootPart.CFrame.lookVector * 3)
 				local lookat = theirCharacter.HumanoidRootPart.Position
 				
 				char.HumanoidRootPart.CFrame = CFrame.new(pos, lookat)
@@ -608,4 +608,4 @@ local function QGARA_fake_script() -- HoodFighting.LocalScript
 		wait()
 	end
 end
-coroutine.wrap(QGARA_fake_script)()
+coroutine.wrap(WHWCG_fake_script)()
