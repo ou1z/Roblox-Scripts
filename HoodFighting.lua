@@ -532,7 +532,7 @@ local function KRYAG_fake_script() -- HoodFighting.LocalScript
 			pcall(function()
 				local opponent = _G.KillAuraOpponent
 				local theirCharacter = opponent.Character
-				local pos = theirCharacter.HumanoidRootPart.Position + (theirCharacter.HumanoidRootPart.CFrame.lookVector / 3)
+				local pos = theirCharacter.HumanoidRootPart.Position - (theirCharacter.HumanoidRootPart.CFrame.lookVector * 3)
 				local lookat = theirCharacter.HumanoidRootPart.Position
 				
 				char.HumanoidRootPart.CFrame = CFrame.new(pos, lookat)
