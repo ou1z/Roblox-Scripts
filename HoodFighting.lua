@@ -20,9 +20,9 @@ local NoCooldown = Instance.new("ImageLabel")
 local Text_4 = Instance.new("TextLabel")
 local Toggle_3 = Instance.new("TextButton")
 local image_3 = Instance.new("ImageLabel")
-local NoCooldown_2 = Instance.new("ImageLabel")
-local Button = Instance.new("TextButton")
-local image_4 = Instance.new("ImageLabel")
+local Reset = Instance.new("ImageLabel")
+local Button = Instance.new("ImageButton")
+local TextLabel = Instance.new("TextLabel")
 
 HoodFighting.Name = "HoodFighting"
 HoodFighting.Parent = game.CoreGui
@@ -251,49 +251,44 @@ image_3.ScaleType = Enum.ScaleType.Slice
 image_3.SliceCenter = Rect.new(100, 100, 100, 100)
 image_3.SliceScale = 0.050
 
-NoCooldown_2.Name = "NoCooldown"
-NoCooldown_2.Parent = Holder
-NoCooldown_2.BackgroundColor3 = Color3.fromRGB(22, 33, 62)
-NoCooldown_2.BackgroundTransparency = 1.000
-NoCooldown_2.Position = UDim2.new(0.0250000339, 0, 0, 0)
-NoCooldown_2.Size = UDim2.new(0, 506, 0, 45)
-NoCooldown_2.Image = "rbxassetid://3570695787"
-NoCooldown_2.ImageColor3 = Color3.fromRGB(22, 33, 62)
-NoCooldown_2.ScaleType = Enum.ScaleType.Slice
-NoCooldown_2.SliceCenter = Rect.new(100, 100, 100, 100)
-NoCooldown_2.SliceScale = 0.040
+Reset.Name = "Reset"
+Reset.Parent = Holder
+Reset.BackgroundColor3 = Color3.fromRGB(22, 33, 62)
+Reset.BackgroundTransparency = 1.000
+Reset.Position = UDim2.new(0.0250000339, 0, 0, 0)
+Reset.Size = UDim2.new(0, 506, 0, 45)
+Reset.Image = "rbxassetid://3570695787"
+Reset.ImageColor3 = Color3.fromRGB(22, 33, 62)
+Reset.ScaleType = Enum.ScaleType.Slice
+Reset.SliceCenter = Rect.new(100, 100, 100, 100)
+Reset.SliceScale = 0.040
 
 Button.Name = "Button"
-Button.Parent = NoCooldown_2
+Button.Parent = Reset
 Button.AnchorPoint = Vector2.new(0.5, 0.5)
 Button.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 Button.BackgroundTransparency = 1.000
-Button.BorderSizePixel = 0
 Button.Position = UDim2.new(0.5, 0, 0.5, 0)
 Button.Size = UDim2.new(0.970000029, 0, 0.800000012, 0)
-Button.Font = Enum.Font.SourceSans
-Button.Text = "Reset"
-Button.TextColor3 = Color3.fromRGB(0, 0, 0)
-Button.TextSize = 14.000
+Button.ZIndex = 2
+Button.Image = "rbxassetid://3570695787"
+Button.ImageColor3 = Color3.fromRGB(122, 36, 50)
+Button.ScaleType = Enum.ScaleType.Slice
+Button.SliceCenter = Rect.new(100, 100, 100, 100)
+Button.SliceScale = 0.050
 
-image_4.Name = "image"
-image_4.Parent = Button
-image_4.Active = true
-image_4.AnchorPoint = Vector2.new(0.5, 0.5)
-image_4.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-image_4.BackgroundTransparency = 1.000
-image_4.Position = UDim2.new(0.5, 0, 0.5, 0)
-image_4.Selectable = true
-image_4.Size = UDim2.new(1, 0, 1, 0)
-image_4.Image = "rbxassetid://3570695787"
-image_4.ImageColor3 = Color3.fromRGB(122, 36, 50)
-image_4.ScaleType = Enum.ScaleType.Slice
-image_4.SliceCenter = Rect.new(100, 100, 100, 100)
-image_4.SliceScale = 0.050
+TextLabel.Parent = Button
+TextLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel.BackgroundTransparency = 1.000
+TextLabel.Size = UDim2.new(1, 0, 1, 0)
+TextLabel.Font = Enum.Font.ArialBold
+TextLabel.Text = "Reset"
+TextLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel.TextSize = 14.000
 
 -- Scripts:
 
-local function QTQA_fake_script() -- Toggle.LocalScript 
+local function KZSEGTA_fake_script() -- Toggle.LocalScript 
 	local script = Instance.new('LocalScript', Toggle)
 
 	script.Parent.MouseButton1Click:Connect(function()
@@ -305,8 +300,8 @@ local function QTQA_fake_script() -- Toggle.LocalScript
 		end
 	end)
 end
-coroutine.wrap(QTQA_fake_script)()
-local function DKJX_fake_script() -- Toggle_2.LocalScript 
+coroutine.wrap(KZSEGTA_fake_script)()
+local function RYRV_fake_script() -- Toggle_2.LocalScript 
 	local script = Instance.new('LocalScript', Toggle_2)
 
 	local defaultwalkid = game.Players.LocalPlayer.Character.Animate.walk.WalkAnim.AnimationId
@@ -329,8 +324,8 @@ local function DKJX_fake_script() -- Toggle_2.LocalScript
 		end
 	end)
 end
-coroutine.wrap(DKJX_fake_script)()
-local function WPOJ_fake_script() -- Toggle_3.LocalScript 
+coroutine.wrap(RYRV_fake_script)()
+local function FBWMAZX_fake_script() -- Toggle_3.LocalScript 
 	local script = Instance.new('LocalScript', Toggle_3)
 
 	
@@ -344,8 +339,8 @@ local function WPOJ_fake_script() -- Toggle_3.LocalScript
 		end
 	end)
 end
-coroutine.wrap(WPOJ_fake_script)()
-local function WDWE_fake_script() -- Button.LocalScript 
+coroutine.wrap(FBWMAZX_fake_script)()
+local function RKVSVV_fake_script() -- Button.LocalScript 
 	local script = Instance.new('LocalScript', Button)
 
 	
@@ -354,8 +349,8 @@ local function WDWE_fake_script() -- Button.LocalScript
 		char.Humanoid.Health = 0
 	end)
 end
-coroutine.wrap(WDWE_fake_script)()
-local function RQVDJO_fake_script() -- HoodFighting.LocalScript 
+coroutine.wrap(RKVSVV_fake_script)()
+local function WVVMKN_fake_script() -- HoodFighting.LocalScript 
 	local script = Instance.new('LocalScript', HoodFighting)
 
 	local main = script.Parent.Main
@@ -403,4 +398,4 @@ local function RQVDJO_fake_script() -- HoodFighting.LocalScript
 		wait()
 	end
 end
-coroutine.wrap(RQVDJO_fake_script)()
+coroutine.wrap(WVVMKN_fake_script)()
