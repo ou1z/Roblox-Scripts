@@ -465,7 +465,7 @@ Text_7.TextSize = 14.000
 
 -- Scripts:
 
-local function TGOGQ_fake_script() -- Toggle.LocalScript 
+local function WTVHTZP_fake_script() -- Toggle.LocalScript 
 	local script = Instance.new('LocalScript', Toggle)
 
 	script.Parent.MouseButton1Click:Connect(function()
@@ -477,8 +477,8 @@ local function TGOGQ_fake_script() -- Toggle.LocalScript
 		end
 	end)
 end
-coroutine.wrap(TGOGQ_fake_script)()
-local function VMYWOW_fake_script() -- Toggle_2.LocalScript 
+coroutine.wrap(WTVHTZP_fake_script)()
+local function GVSK_fake_script() -- Toggle_2.LocalScript 
 	local script = Instance.new('LocalScript', Toggle_2)
 
 	local defaultwalkid = game.Players.LocalPlayer.Character.Animate.walk.WalkAnim.AnimationId
@@ -503,8 +503,8 @@ local function VMYWOW_fake_script() -- Toggle_2.LocalScript
 		end
 	end)
 end
-coroutine.wrap(VMYWOW_fake_script)()
-local function RVOERZ_fake_script() -- Toggle_3.LocalScript 
+coroutine.wrap(GVSK_fake_script)()
+local function QYWP_fake_script() -- Toggle_3.LocalScript 
 	local script = Instance.new('LocalScript', Toggle_3)
 
 	
@@ -518,8 +518,8 @@ local function RVOERZ_fake_script() -- Toggle_3.LocalScript
 		end
 	end)
 end
-coroutine.wrap(RVOERZ_fake_script)()
-local function RBNDVY_fake_script() -- PlayerName.LocalScript 
+coroutine.wrap(QYWP_fake_script)()
+local function BGYMNS_fake_script() -- PlayerName.LocalScript 
 	local script = Instance.new('LocalScript', PlayerName)
 
 	function findPlayer(str)
@@ -534,8 +534,8 @@ local function RBNDVY_fake_script() -- PlayerName.LocalScript
 		_G.KillAuraOpponent = findPlayer(script.Parent.Text)
 	end)
 end
-coroutine.wrap(RBNDVY_fake_script)()
-local function IXXAYFI_fake_script() -- Toggle_4.LocalScript 
+coroutine.wrap(BGYMNS_fake_script)()
+local function SCWIYCM_fake_script() -- Toggle_4.LocalScript 
 	local script = Instance.new('LocalScript', Toggle_4)
 
 	
@@ -549,8 +549,8 @@ local function IXXAYFI_fake_script() -- Toggle_4.LocalScript
 		end
 	end)
 end
-coroutine.wrap(IXXAYFI_fake_script)()
-local function GGOR_fake_script() -- PlayerName_2.LocalScript 
+coroutine.wrap(SCWIYCM_fake_script)()
+local function RALU_fake_script() -- PlayerName_2.LocalScript 
 	local script = Instance.new('LocalScript', PlayerName_2)
 
 	script.Parent.FocusLost:Connect(function(enter)
@@ -559,8 +559,8 @@ local function GGOR_fake_script() -- PlayerName_2.LocalScript
 		end
 	end)
 end
-coroutine.wrap(GGOR_fake_script)()
-local function DQQPHJ_fake_script() -- Button.LocalScript 
+coroutine.wrap(RALU_fake_script)()
+local function QUXPOXP_fake_script() -- Button.LocalScript 
 	local script = Instance.new('LocalScript', Button)
 
 	
@@ -569,8 +569,8 @@ local function DQQPHJ_fake_script() -- Button.LocalScript
 		char.Humanoid.Health = 0
 	end)
 end
-coroutine.wrap(DQQPHJ_fake_script)()
-local function NJWOU_fake_script() -- Button_2.LocalScript 
+coroutine.wrap(QUXPOXP_fake_script)()
+local function KOMCDGR_fake_script() -- Button_2.LocalScript 
 	local script = Instance.new('LocalScript', Button_2)
 
 	
@@ -579,8 +579,8 @@ local function NJWOU_fake_script() -- Button_2.LocalScript
 		char.Humanoid.Health = 0
 	end)
 end
-coroutine.wrap(NJWOU_fake_script)()
-local function LKOG_fake_script() -- HoodFighting.LocalScript 
+coroutine.wrap(KOMCDGR_fake_script)()
+local function GLYJAA_fake_script() -- HoodFighting.LocalScript 
 	local script = Instance.new('LocalScript', HoodFighting)
 
 	local main = script.Parent.Main
@@ -633,7 +633,7 @@ local function LKOG_fake_script() -- HoodFighting.LocalScript
 				local pos = theirCharacter.HumanoidRootPart.Position - (theirCharacter.HumanoidRootPart.CFrame.lookVector * 4.25)
 				local lookat = theirCharacter.HumanoidRootPart.Position
 				
-				char.HumanoidRootPart.CFrame = CFrame.new(pos, lookat)
+				game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(pos, lookat)
 			end)
 		end
 	end
@@ -661,4 +661,4 @@ local function LKOG_fake_script() -- HoodFighting.LocalScript
 		wait()
 	end
 end
-coroutine.wrap(LKOG_fake_script)()
+coroutine.wrap(GLYJAA_fake_script)()
