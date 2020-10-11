@@ -101,7 +101,6 @@ Holder.BackgroundTransparency = 1.000
 Holder.BorderSizePixel = 0
 Holder.Position = UDim2.new(0, 0, 0.226999998, 0)
 Holder.Size = UDim2.new(0, 527, 0, 222)
-Holder.CanvasPosition = Vector2.new(0, 150)
 Holder.ScrollBarThickness = 1
 
 UIListLayout.Parent = Holder
@@ -180,7 +179,7 @@ Text_3.BorderColor3 = Color3.fromRGB(27, 42, 53)
 Text_3.Position = UDim2.new(0.0573122539, 0, 0, 0)
 Text_3.Size = UDim2.new(0, 279, 0, 45)
 Text_3.Font = Enum.Font.ArialBold
-Text_3.Text = "Walk Animation"
+Text_3.Text = "Wolf Walk"
 Text_3.TextColor3 = Color3.fromRGB(255, 255, 255)
 Text_3.TextSize = 14.000
 Text_3.TextXAlignment = Enum.TextXAlignment.Left
@@ -423,7 +422,7 @@ TextLabel_2.TextSize = 14.000
 
 -- Scripts:
 
-local function ULNRBQA_fake_script() -- Toggle.LocalScript 
+local function PHORO_fake_script() -- Toggle.LocalScript 
 	local script = Instance.new('LocalScript', Toggle)
 
 	script.Parent.MouseButton1Click:Connect(function()
@@ -435,15 +434,15 @@ local function ULNRBQA_fake_script() -- Toggle.LocalScript
 		end
 	end)
 end
-coroutine.wrap(ULNRBQA_fake_script)()
-local function UIHDEVU_fake_script() -- Toggle_2.LocalScript 
+coroutine.wrap(PHORO_fake_script)()
+local function QHKAIY_fake_script() -- Toggle_2.LocalScript 
 	local script = Instance.new('LocalScript', Toggle_2)
 
 	local defaultwalkid = game.Players.LocalPlayer.Character.Animate.walk.WalkAnim.AnimationId
 	local defaultrunid = game.Players.LocalPlayer.Character.Animate.run.RunAnim.AnimationId
 	_G.defaultrun = defaultrunid
 	_G.defaultwalk = defaultwalkid
-	local walkAnim = 'rbxassetid://5408967895'
+	local walkAnim = 'rbxassetid://5806342058'
 	local runAnim = 'rbxassetid://4767669175'
 	
 	
@@ -461,8 +460,8 @@ local function UIHDEVU_fake_script() -- Toggle_2.LocalScript
 		end
 	end)
 end
-coroutine.wrap(UIHDEVU_fake_script)()
-local function CNGGI_fake_script() -- Toggle_3.LocalScript 
+coroutine.wrap(QHKAIY_fake_script)()
+local function LWDRKS_fake_script() -- Toggle_3.LocalScript 
 	local script = Instance.new('LocalScript', Toggle_3)
 
 	
@@ -476,8 +475,8 @@ local function CNGGI_fake_script() -- Toggle_3.LocalScript
 		end
 	end)
 end
-coroutine.wrap(CNGGI_fake_script)()
-local function NERZN_fake_script() -- PlayerName.LocalScript 
+coroutine.wrap(LWDRKS_fake_script)()
+local function WRIBR_fake_script() -- PlayerName.LocalScript 
 	local script = Instance.new('LocalScript', PlayerName)
 
 	function findPlayer(str)
@@ -492,8 +491,8 @@ local function NERZN_fake_script() -- PlayerName.LocalScript
 		_G.KillAuraOpponent = findPlayer(script.Parent.Text)
 	end)
 end
-coroutine.wrap(NERZN_fake_script)()
-local function XHWUS_fake_script() -- Toggle_4.LocalScript 
+coroutine.wrap(WRIBR_fake_script)()
+local function KWHW_fake_script() -- Toggle_4.LocalScript 
 	local script = Instance.new('LocalScript', Toggle_4)
 
 	
@@ -507,8 +506,8 @@ local function XHWUS_fake_script() -- Toggle_4.LocalScript
 		end
 	end)
 end
-coroutine.wrap(XHWUS_fake_script)()
-local function QIZSXLP_fake_script() -- Button.LocalScript 
+coroutine.wrap(KWHW_fake_script)()
+local function SIYD_fake_script() -- Button.LocalScript 
 	local script = Instance.new('LocalScript', Button)
 
 	
@@ -517,8 +516,8 @@ local function QIZSXLP_fake_script() -- Button.LocalScript
 		char.Humanoid.Health = 0
 	end)
 end
-coroutine.wrap(QIZSXLP_fake_script)()
-local function ATHNI_fake_script() -- Button_2.LocalScript 
+coroutine.wrap(SIYD_fake_script)()
+local function ECLYOCO_fake_script() -- Button_2.LocalScript 
 	local script = Instance.new('LocalScript', Button_2)
 
 	
@@ -527,8 +526,8 @@ local function ATHNI_fake_script() -- Button_2.LocalScript
 		char.Humanoid.Health = 0
 	end)
 end
-coroutine.wrap(ATHNI_fake_script)()
-local function DKKN_fake_script() -- HoodFighting.LocalScript 
+coroutine.wrap(ECLYOCO_fake_script)()
+local function QGARA_fake_script() -- HoodFighting.LocalScript 
 	local script = Instance.new('LocalScript', HoodFighting)
 
 	local main = script.Parent.Main
@@ -609,4 +608,4 @@ local function DKKN_fake_script() -- HoodFighting.LocalScript
 		wait()
 	end
 end
-coroutine.wrap(DKKN_fake_script)()
+coroutine.wrap(QGARA_fake_script)()
