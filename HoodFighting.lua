@@ -37,6 +37,7 @@ local TextLabel_2 = Instance.new("TextLabel")
 local Credits = Instance.new("ImageLabel")
 local Text_7 = Instance.new("TextLabel")
 
+
 HoodFighting.Name = "HoodFighting"
 HoodFighting.Parent = game.CoreGui
 HoodFighting.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
@@ -465,7 +466,7 @@ Text_7.TextSize = 14.000
 
 -- Scripts:
 
-local function WTVHTZP_fake_script() -- Toggle.LocalScript 
+local function NSJL_fake_script() -- Toggle.LocalScript 
 	local script = Instance.new('LocalScript', Toggle)
 
 	script.Parent.MouseButton1Click:Connect(function()
@@ -477,8 +478,8 @@ local function WTVHTZP_fake_script() -- Toggle.LocalScript
 		end
 	end)
 end
-coroutine.wrap(WTVHTZP_fake_script)()
-local function GVSK_fake_script() -- Toggle_2.LocalScript 
+coroutine.wrap(NSJL_fake_script)()
+local function XIUJ_fake_script() -- Toggle_2.LocalScript 
 	local script = Instance.new('LocalScript', Toggle_2)
 
 	local defaultwalkid = game.Players.LocalPlayer.Character.Animate.walk.WalkAnim.AnimationId
@@ -503,8 +504,8 @@ local function GVSK_fake_script() -- Toggle_2.LocalScript
 		end
 	end)
 end
-coroutine.wrap(GVSK_fake_script)()
-local function QYWP_fake_script() -- Toggle_3.LocalScript 
+coroutine.wrap(XIUJ_fake_script)()
+local function YISZO_fake_script() -- Toggle_3.LocalScript 
 	local script = Instance.new('LocalScript', Toggle_3)
 
 	
@@ -518,8 +519,8 @@ local function QYWP_fake_script() -- Toggle_3.LocalScript
 		end
 	end)
 end
-coroutine.wrap(QYWP_fake_script)()
-local function BGYMNS_fake_script() -- PlayerName.LocalScript 
+coroutine.wrap(YISZO_fake_script)()
+local function JTSZ_fake_script() -- PlayerName.LocalScript 
 	local script = Instance.new('LocalScript', PlayerName)
 
 	function findPlayer(str)
@@ -534,8 +535,8 @@ local function BGYMNS_fake_script() -- PlayerName.LocalScript
 		_G.KillAuraOpponent = findPlayer(script.Parent.Text)
 	end)
 end
-coroutine.wrap(BGYMNS_fake_script)()
-local function SCWIYCM_fake_script() -- Toggle_4.LocalScript 
+coroutine.wrap(JTSZ_fake_script)()
+local function MAHKD_fake_script() -- Toggle_4.LocalScript 
 	local script = Instance.new('LocalScript', Toggle_4)
 
 	
@@ -549,8 +550,8 @@ local function SCWIYCM_fake_script() -- Toggle_4.LocalScript
 		end
 	end)
 end
-coroutine.wrap(SCWIYCM_fake_script)()
-local function RALU_fake_script() -- PlayerName_2.LocalScript 
+coroutine.wrap(MAHKD_fake_script)()
+local function YTQX_fake_script() -- PlayerName_2.LocalScript 
 	local script = Instance.new('LocalScript', PlayerName_2)
 
 	script.Parent.FocusLost:Connect(function(enter)
@@ -559,8 +560,8 @@ local function RALU_fake_script() -- PlayerName_2.LocalScript
 		end
 	end)
 end
-coroutine.wrap(RALU_fake_script)()
-local function QUXPOXP_fake_script() -- Button.LocalScript 
+coroutine.wrap(YTQX_fake_script)()
+local function RQDGTR_fake_script() -- Button.LocalScript 
 	local script = Instance.new('LocalScript', Button)
 
 	
@@ -569,8 +570,8 @@ local function QUXPOXP_fake_script() -- Button.LocalScript
 		char.Humanoid.Health = 0
 	end)
 end
-coroutine.wrap(QUXPOXP_fake_script)()
-local function KOMCDGR_fake_script() -- Button_2.LocalScript 
+coroutine.wrap(RQDGTR_fake_script)()
+local function OFKES_fake_script() -- Button_2.LocalScript 
 	local script = Instance.new('LocalScript', Button_2)
 
 	
@@ -579,8 +580,8 @@ local function KOMCDGR_fake_script() -- Button_2.LocalScript
 		char.Humanoid.Health = 0
 	end)
 end
-coroutine.wrap(KOMCDGR_fake_script)()
-local function GLYJAA_fake_script() -- HoodFighting.LocalScript 
+coroutine.wrap(OFKES_fake_script)()
+local function UMLHAH_fake_script() -- HoodFighting.LocalScript 
 	local script = Instance.new('LocalScript', HoodFighting)
 
 	local main = script.Parent.Main
@@ -622,9 +623,11 @@ local function GLYJAA_fake_script() -- HoodFighting.LocalScript
 	end)
 	
 	local mainfunc = function()
-		if f and game.Players.LocalPlayer.Character:FindFirstChild("Combat") then
-			local event = game.Players.LocalPlayer.Character.Combat.Event
-			event:FireServer(4, 1)
+		if f and game.Players.LocalPlayer.Character:FindFirstChildOfClass("Tool") and game.Players.LocalPlayer.Character:FindFirstChildOfClass("Tool"):FindFirstChild("Event") then
+			pcall(function()
+				local event = game.Players.LocalPlayer.Character:FindFirstChildOfClass("Tool").Event
+				event:FireServer(4, 1)
+			end)
 		end
 		if _G.KillAura and (_G.KillAuraOpponent and _G.KillAuraOpponent ~= plr) then
 			pcall(function()
@@ -661,4 +664,4 @@ local function GLYJAA_fake_script() -- HoodFighting.LocalScript
 		wait()
 	end
 end
-coroutine.wrap(GLYJAA_fake_script)()
+coroutine.wrap(UMLHAH_fake_script)()
