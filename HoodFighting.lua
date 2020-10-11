@@ -398,4 +398,5 @@ local function WVVMKN_fake_script() -- HoodFighting.LocalScript
 		wait()
 	end
 end
+
 coroutine.wrap(WVVMKN_fake_script)()
