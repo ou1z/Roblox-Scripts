@@ -503,7 +503,7 @@ return {
 		end
 		return content
 	end,
-	SavePrompt = function(text, yield)
+	PromptSave = function(text, yield)
 		local SaveExplorer = Instance.new("ScreenGui")
 		local Open = Instance.new("Frame")
 		local Title = Instance.new("Frame")
@@ -545,7 +545,7 @@ return {
 		Open.BorderSizePixel = 0
 		Open.ClipsDescendants = true
 		Open.Position = UDim2.new(0.5, 0, 0.5, 0)
-		Open.Size = UDim2.new(0.474999994, 0, 0.460000008, 0)
+		Open.Size = UDim2.new(0,0,0,0)
 
 		Title.Name = "Title"
 		Title.Parent = Open
