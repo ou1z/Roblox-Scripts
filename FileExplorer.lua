@@ -317,11 +317,6 @@ return function(callback, yield)
 
 	local SelectedFiles = {}
 
-	Bottom.Cancel.MouseButton1Click:Connect(function()
-		Open:TweenSize(UDim2.new(0,0,0,0),'Out','Linear',0.1,true,function()
-			FileExplorer:Destroy()
-		end)
-	end)
 
 	function filetree(f)
 		local files = listfiles(f or '/')
@@ -483,7 +478,14 @@ return function(callback, yield)
 		print(NextDirectory)
 		Refresh(NextDirectory)
 	end)
-
+	Bottom.Cancel.MouseButton1Click:Connect(function()
+		Open:TweenSize(UDim2.new(0,0,0,0),'Out','Linear',0.1,true,function()
+			FileExplorer:Destroy()
+		end)
+		pcall(callback)
+		done = true
+	end)
+	
 
 	CurrentDirectory.Refresh.MouseButton1Click:Connect(Refresh)
 	Refresh()
