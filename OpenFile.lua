@@ -1,4 +1,4 @@
-return function(callback)
+return function(callback, yield)
 	local FileExplorer = Instance.new("ScreenGui")
 	local Open = Instance.new("Frame")
 	local Title = Instance.new("Frame")
@@ -456,6 +456,7 @@ return function(callback)
 		FileList.CanvasSize = UDim2.new(0, 0, 0, 50 * (#FileList:GetChildren() - 1))
 		CurrentDirectory.TextLabel.Text = f and 'Workspace'..f or 'Workspace'
 	end
+	local done = false
 
 	Bottom.Open.MouseButton1Click:Connect(function()
 		local Selected = SelectedFiles[1]
@@ -467,6 +468,7 @@ return function(callback)
 			Refresh(Selected)
 		elseif isfile(Selected) then
 			pcall(callback, readfile(Selected))
+			done = true
 			Open:TweenSize(UDim2.new(0,0,0,0),'Out','Linear',0.1,true,function()
 				FileExplorer:Destroy()
 			end)
@@ -485,4 +487,8 @@ return function(callback)
 
 	CurrentDirectory.Refresh.MouseButton1Click:Connect(Refresh)
 	Refresh()
+	
+	if yield ~= false then
+		repeat wait() until done
+	end
 end
