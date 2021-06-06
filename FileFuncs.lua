@@ -503,7 +503,7 @@ return {
 		end
 		return content
 	end,
-	PromptSave = function(text, yield)
+	SavePrompt = function(text, yield)
 		local SaveExplorer = Instance.new("ScreenGui")
 		local Open = Instance.new("Frame")
 		local Title = Instance.new("Frame")
