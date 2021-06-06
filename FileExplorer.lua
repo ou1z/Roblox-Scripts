@@ -40,8 +40,6 @@ return function(callback, yield)
 	Open.BorderSizePixel = 0
 	Open.ClipsDescendants = true
 	Open.Position = UDim2.new(0.5, 0, 0.5, 0)
-	Open.Active = true
-	Open.Draggable = true
 
 	Title.Name = "Title"
 	Title.Parent = Open
@@ -454,6 +452,7 @@ return function(callback, yield)
 		CurrentDirectory.TextLabel.Text = f and 'Workspace'..f or 'Workspace'
 	end
 	local done = false
+	local content = ""
 
 	Bottom.Open.MouseButton1Click:Connect(function()
 		local Selected = SelectedFiles[1]
@@ -464,7 +463,11 @@ return function(callback, yield)
 			Directory = Selected
 			Refresh(Selected)
 		elseif isfile(Selected) then
-			pcall(callback, readfile(Selected))
+			local c = readfile(Selected)
+			if callback then
+				pcall(callback, c)
+			end
+			content = c
 			done = true
 			Open:TweenSize(UDim2.new(0,0,0,0),'Out','Linear',0.1,true,function()
 				FileExplorer:Destroy()
@@ -484,7 +487,9 @@ return function(callback, yield)
 		Open:TweenSize(UDim2.new(0,0,0,0),'Out','Linear',0.1,true,function()
 			FileExplorer:Destroy()
 		end)
-		pcall(callback)
+		if callback then
+			pcall(callback)
+		end
 		done = true
 	end)
 	
@@ -495,4 +500,5 @@ return function(callback, yield)
 	if yield ~= false then
 		repeat wait() until done
 	end
+	return content
 end
