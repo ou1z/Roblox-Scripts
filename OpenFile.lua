@@ -35,10 +35,11 @@ return function(callback)
 
 	Open.Name = "Open"
 	Open.Parent = FileExplorer
+	Open.AnchorPoint = Vector2.new(0.5, 0.5)
 	Open.BackgroundColor3 = Color3.fromRGB(32, 32, 32)
 	Open.BorderSizePixel = 0
-	Open.Position = UDim2.new(0.0850460678, 0, 0.24927114, 0)
-	Open.Size = UDim2.new(0, 645, 0, 335)
+	Open.ClipsDescendants = true
+	Open.Position = UDim2.new(0.5, 0, 0.5, 0)
 
 	Title.Name = "Title"
 	Title.Parent = Open
@@ -292,6 +293,13 @@ return function(callback)
 	FolderImage_2.Image = "rbxassetid://6919327844"
 	FolderImage_2.ScaleType = Enum.ScaleType.Fit
 
+	local function WLYDKPO_fake_script()
+		local script = Instance.new('LocalScript', FileExplorer)
+
+		script.Parent.Open:TweenSize(UDim2.new(0.49, 0,0.488, 0),'In','Linear',0.5,true)
+	end
+	coroutine.wrap(WLYDKPO_fake_script)()
+
 
 
 	do
@@ -310,7 +318,9 @@ return function(callback)
 	local SelectedFiles = {}
 
 	Bottom.Cancel.MouseButton1Click:Connect(function()
-		FileExplorer:Destroy()
+		FileExplorer:TweenSize(UDim2.new(0,0,0,0),'Out','Linear',0.1,true,function()
+			FileExplorer:Destroy()
+		end)
 	end)
 
 	function filetree(f)
@@ -457,7 +467,9 @@ return function(callback)
 			Refresh(Selected)
 		elseif isfile(Selected) then
 			pcall(callback, readfile(Selected))
-			FileExplorer:Destroy()
+			FileExplorer:TweenSize(UDim2.new(0,0,0,0),'Out','Linear',0.1,true,function()
+				FileExplorer:Destroy()
+			end)
 		end
 	end)
 
