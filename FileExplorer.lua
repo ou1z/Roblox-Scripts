@@ -40,6 +40,8 @@ return function(callback, yield)
 	Open.BorderSizePixel = 0
 	Open.ClipsDescendants = true
 	Open.Position = UDim2.new(0.5, 0, 0.5, 0)
+	Open.Active = true
+	Open.Draggable = true
 
 	Title.Name = "Title"
 	Title.Parent = Open
