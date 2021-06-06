@@ -296,7 +296,7 @@ return function(callback)
 	local function WLYDKPO_fake_script()
 		local script = Instance.new('LocalScript', FileExplorer)
 
-		script.Parent.Open:TweenSize(UDim2.new(0.475, 0,0.46, 0),'In','Linear',0.5,true)
+		script.Parent.Open:TweenSize(UDim2.new(0.475, 0,0.46, 0),'In','Linear',0.1,true)
 	end
 	coroutine.wrap(WLYDKPO_fake_script)()
 
