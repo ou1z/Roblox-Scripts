@@ -318,7 +318,7 @@ return function(callback)
 	local SelectedFiles = {}
 
 	Bottom.Cancel.MouseButton1Click:Connect(function()
-		FileExplorer:TweenSize(UDim2.new(0,0,0,0),'Out','Linear',0.1,true,function()
+		Open:TweenSize(UDim2.new(0,0,0,0),'Out','Linear',0.1,true,function()
 			FileExplorer:Destroy()
 		end)
 	end)
@@ -467,7 +467,7 @@ return function(callback)
 			Refresh(Selected)
 		elseif isfile(Selected) then
 			pcall(callback, readfile(Selected))
-			FileExplorer:TweenSize(UDim2.new(0,0,0,0),'Out','Linear',0.1,true,function()
+			Open:TweenSize(UDim2.new(0,0,0,0),'Out','Linear',0.1,true,function()
 				FileExplorer:Destroy()
 			end)
 		end
