@@ -804,7 +804,7 @@ return {
 		local function SFQWW_fake_script() -- SaveExplorer.LocalScript 
 			local script = Instance.new('LocalScript', SaveExplorer)
 
-			script.Parent.Open:TweenSize(UDim2.new(0.49, 0,0.488, 0),'In','Linear',0.5,true)
+			script.Parent.Open:TweenSize(UDim2.new(0.49, 0,0.488, 0),'In','Linear',0.1,true)
 		end
 		coroutine.wrap(SFQWW_fake_script)()
 
