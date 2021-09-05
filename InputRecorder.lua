@@ -21,7 +21,7 @@ function endRecording(started)
     return recording
 end
 
-do -- base 64 lib got from: https://stackoverflow.com/questions/34618946/lua-base64-encode
+do -- base 64 lib got from: http://lua-users.org/wiki/BaseSixtyFour
     local b='ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/'
     
     function base64encode(data)
